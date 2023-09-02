@@ -1,0 +1,4 @@
+controller\Ficha.class
+model\FichaDao.class
+model\Conexion.class
+model\FichaVo.class
