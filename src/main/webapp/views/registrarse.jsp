@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"  href="../css/style_registrar.css">
+    <link rel="stylesheet" type="text/css"  href="css/style_registrar.css">
     <title>Registro</title>
 </head>
 <body>
     <header class="header1">
         <div class="logo">
-            <img src="../img/logo_sena.jpeg" width="80px">
+            <img src="img/logo_sena.jpeg" width="80px">
         </div>
         <nav>
             <ul class="title">
@@ -37,7 +37,7 @@
 
     <section class="home">
 
-        <video class="video-slide active" src="../img/Video clip SENA.mp4" autoplay muted loop></video>
+        <video class="video-slide active" src="img/Video clip SENA.mp4" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Aqui puedes registrarte <br><span>SENA</span></h1>
@@ -46,73 +46,63 @@
         </div>
     
     </section>
-
+    <form action="usuario" method="POST" class="formularioRgeistro">
     <div class="formularioRgeistro ">
-        <div>
-            <div class="registrarInstructor">
-                <form class="registro" method="POST">
-                    <h2 id="Instructor">REGISTRAR INSTRUCTOR! </h2>
-                    <div class="username">
-                        <label> Correo Electronico</label><p></p>
-                        <input type="email" >
-                    </div>
-                    <div class="name">
-                        <label> Nombre Completo</label><p></p>
-                        <input type="text" >
-                    </div>
-                    <div class="tipoDocumento">
-                        <label> Tipo Documento</label><p></p>
-                        <input type="text" >
-                    </div>
-                    <div class="Documento">
-                        <label> Documento</label><p></p>
-                        <input type="number" >
-                    </div>
-                    <div class="Celular">
-                        <label> Celular</label><p></p>
-                        <input type="number" >
-                    </div>
-                    <div class="tipoContrato">
-                        <label>Contraseña</label><p></p>
-                        <input type="password" >
-                    
-                    </div> 
     
-                <input type="submit" value="Registrarme">
-            </div>
-        
             <div class="registrarAdmin">
-                <form class="registro" method="POST">
-                    <h2 id="Administrador">REGISTRAR ADMINISTRADOR! </h2>
+                <form class="" method="POST">
+                    <h2 id="Administrador">REGISTRAR USUARIO! </h2>
                     <div class="name">
-                        <label> Nombre Completo</label><p></p>
-                        <input type="text" >
+                        <label for="nombreUsuario">Nombre</label>
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required>
                     </div>
-                    <div class="tipoDocumento">
-                        <label> Tipo Documento</label><p></p>
-                        <input type="text" >
+                    <div class="name">
+                        <label for="tipodocUsuario">Tipo documento</label>
+                        <input type="text" name="tipodocUsuario" id="tipodocUsuario" class="form-control" required>
                     </div>
-                    <div class="Documento">
-                        <label> Documento</label><p></p>
-                        <input type="number" >
+                    <div class="name">
+                        <label for="documentoUsuario">Numero Documento</label>
+                        <input type="text" name="documentoUsuario" id="documentoUsuario" class="form-control" required>
                     </div>
-                    <div class="Celular">
-                        <label> Celular</label><p></p>
-                        <input type="number" >
+                
+                    <div class="name">
+                        <label for="celularUsuario">Numero Celular</label>
+                        <input type="text" name="celularUsuario" id="celularUsuario" class="form-control" required>
                     </div>
-                    <div class="username">
-                        <label> Correo Electronico</label><p></p>
-                        <input type="email" >
+                
+                    <div class="name">
+                        <label> Rol-Cargo</label><p></p>
+                        <select name="rol" id="rol" >
+                            <option value="#">Seleccionar</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Instructor">Instructor</option>   
+                        </select>
                     </div>
-                    <div class="password">
-                        <label>Contraseña</label><p></p>
-                        <input type="password" >
-                    
-                    </div> 
+                
+                    <div class="name">
+                        <label for="tipoContrato">Tipo Contrato</label>
+                        <input type="text" name="tipoContrato" id="tipoContrato" class="form-control" required>
+                    </div>
+                
+                    <div class="name">
+                        <label for="correo">Correo</label>
+                        <input type="email" name="correo" id="correo" class="form-control" required>
+                    </div>
+                
+                    <div class="name">
+                        <label for="clave">Contraseña</label>
+                        <input type="password" name="clave" id="clave" class="form-control" required>
+                    </div>
+                
+                    <div>
+                        <button type="submit"  name="accion" value="registrar">Registrar</button>
+                    </div>
     
-                <input type="submit" value="Registrarme">
+               
             </div>
         </div>
+</form>
+   
 
            <!--FOOTER-->
            

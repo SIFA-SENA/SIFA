@@ -53,7 +53,7 @@
                    <th>Area de formacion</th>
                    <th>Lugar de formacion</th>
                    <th><center>Estado</center></th>            
-                   <th colspan="2"><center>Editar estado</center></th> 
+                   <th colspan="2"><center>Acciones</center></th> 
                </tr>
                
        <c:forEach var="ficha" items="${ficha}">         
@@ -64,21 +64,13 @@
                <td>${ficha.getAreaFormacion()}</td>
                <td>${ficha.getLugarFormacion()}</td>
                <td>${ficha.getEstadoFicha()}</td> 
-               <!-- <c:choose>
-                                                    <c:when test="${ficha.estadoFicha == Productiva}">
-                                                        <select name="estadoFicha">
-                                                        <option id="Lectiva" href="ficha?cambiar=Lectiva&cod=${ficha.idFicha}" class="btn btn-danger"  data-toggle="tooltip" title="Lectiva" data-original-title="Lectiva">
-                                                            <i class="fa fa-remove"></i></option>
-
-                                                        <option id="Productiva" href="ficha?cambiar=Productiva&cod=${ficha.idFicha}" class="btn btn-danger"  data-toggle="tooltip" title="Productiva" data-original-title="Productiva">
-                                                        <i class="fa fa-remove"></i></option>
-                                                        </c:when>
-                                                        <c:otherwise>
-                                                        <option id="FormacionTerminada" href="ficha?cambiar=FormacionTerminada&cod=${ficha.idFicha}" class="btn btn-danger"  data-toggle="tooltip" title="FormacionTerminada" data-original-title="FormacionTerminada">
-                                                       <i class="fa fa-remove"></i></option>
-                                                        </c:otherwise>
-                                                        </select>
-                                                    </c:choose>-->
+               <td>
+                <input type="submit" id="item" value="${ficha.idFicha}">
+                        <a href="ficha?accion=actualizar&cod=${ficha.getIdFicha()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
+                          <i class="fa-solid fa-pen"></i></a>
+                <!-- <button type="submit" class="btn btn-editar"><a href="usuario?accion=editarUsuario&cod=${usuario.getIdUsua()}"></a><i class="fa-solid fa-pen"></i></button> -->
+              </td>
+              
         </c:forEach> 
        
       

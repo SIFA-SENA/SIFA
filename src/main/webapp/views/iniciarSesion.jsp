@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/style_inicioSesion.css">
+    <link rel="stylesheet" href="css/style_inicioSesion.css">
     <title>Iniciar Sesion</title>
 </head>
 <body>
     <header class="header1">
         <div class="logo">
-            <img src="img/logo_sena.jpeg" width="80px">
+            <img src="../img/logo_sena.jpeg" width="80px">
         </div>
         <nav>
             <ul class="title">
@@ -29,54 +28,37 @@
         <div class="options">
             <h4><a href="#">Ayuda y Soporte</a></h4>
         </div>
-            <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
-            <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></a>
+            <h4 class="ingresar"><a href="index.html">Salir</a></h4>
+            <a href="index.html"><i class="fa-solid fa-right-to-bracket"></i></a>
     </header>
 
 
-    <h2 class="mensaje_inicio" id="Iniciar">COMO QUIERES INICIAR SESION </h2>
+   
     <div class="formularios ">
         <div>
             <div class="loginAdmin">
-                <form class="IniciarSesionAdmin" method="POST">
-                    <h2>ADMINISTRADOR</h2>
+                <form action="usuario" method="post" class="formulario">
+                    <h2>Usuario</h2>
                     <div class="username">
                         <label> Correo Electronico</label><p></p>
-                        <input type="text" >
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="username">
                     </div>
                     <div class="password">
                         <label>Contraseña</label><p></p>
-                        <input type="password" >
+                        <input type="password" name="clave" id="clave" class="password">
                     
                     </div> 
-                    <a type="input"  href="gestionFichas.jsp">Ingresar</a>
+                    <input type="submit" class="btn btn-primary" name="accion" value="iniciarSesionl"  ></input>
                     
             </div>
         </div>
         
     
 
-        <div>
-            <div class="loginInstructor">
-                <form class="IniciarSesionInstructor" method="POST">
-                    <h2>INSTRUCTOR </h2>
-                    <div class="username"2>
-                        <label> Correo Electronico</label><p></p>
-                        <input type="text" >
-                    </div>
-                    <div class="password"2>
-                        <label>Contraseña</label><p></p>
-                        <input type="password" >
-
-                    </div> 
-    
-                    <a type="input"  href="gestionFichas.jsp">Ingresar</a>
-            </div>
-        </div>
-    </div>
+        
 
     
-    <h3>No tienes cuenta? <a href="registrarse.jsp">Registrate aqui!</a></h3>
+    <h3>No tienes cuenta? <a href="usuario?accion=abrirForm">Registrate aqui!</a></h3>
   
 
        <!--FOOTER-->
@@ -116,3 +98,4 @@
    </footer>
 </body>
 </html>
+

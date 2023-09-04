@@ -71,7 +71,7 @@ public class Ficha extends HttpServlet {
         
     }
 
-    //ABRIR FORMULARIO REGISTRAR FICHA
+    //-----------------------------------ABRIR FORMULARIO REGISTRAR FICHA ---------------------------------
 
     private void abrirFormF(HttpServletRequest req, HttpServletResponse resp) {
         System.out.println("Entro al metodo abrir formulario");
@@ -83,7 +83,7 @@ public class Ficha extends HttpServlet {
         }
     }
     
-    //registro ficha
+    //----------------------------------REGISTRAR FICHA -------------------------------------------------
     private void registrarFicha(HttpServletRequest req, HttpServletResponse resp) {
         System.out.println("Entró al Registro de ficha");
 
@@ -104,13 +104,13 @@ public class Ficha extends HttpServlet {
         try {
             fd.registrarFicha(fv);
             System.out.println("Registro insertado correctamente");
-            req.getRequestDispatcher("ficha?accion=abrirForm").forward(req, resp);
+            req.getRequestDispatcher("ficha?accion=abrirFormF").forward(req, resp);
         } catch (Exception e) {
             System.out.println("Error en la inserción del registro "+e.getMessage().toString());
         }
     }
     }
-    //listar ficha
+    //-------------------------------------LISTAR FICHA ------------------------------------------------
      private void listarFicha(HttpServletRequest req, HttpServletResponse resp) {
         try {
             List ficha=fd.listarFicha();

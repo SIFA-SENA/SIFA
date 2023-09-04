@@ -10,6 +10,15 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
+  
+  <servlet>
+    <servlet-name>controller.Usuario</servlet-name>
+    <servlet-class>controller.Usuario</servlet-class>
+  </servlet>
+   <servlet-mapping> 
+    <servlet-name>controller.Usuario</servlet-name>
+    <url-pattern>/usuario</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>controller.Ficha</servlet-name>
@@ -20,5 +29,14 @@
     <url-pattern>/ficha</url-pattern>
   </servlet-mapping>
 
+
+   <servlet>
+    <servlet-name>controller.Aprendiz</servlet-name>
+    <servlet-class>controller.Aprendiz</servlet-class>
+  </servlet>
+   <servlet-mapping> 
+    <servlet-name>controller.Aprendiz</servlet-name>
+    <url-pattern>/aprendiz</url-pattern>
+  </servlet-mapping>
 
 </web-app>

@@ -15,7 +15,7 @@ String sql=null;
 int r; //cantidad de filas que devuelve una sentencia
 FichaVo fichaVo;
 
-//------------------ REGISTRO FICHA -----------------------
+//----------------------------- REGISTRO FICHA -------------------------------------------
 public int registrarFicha(FichaVo fic) throws SQLException{
     System.out.println("entro a registrar ficha");
     sql="INSERT INTO Ficha(idFicha,programaFormacion,areaFormacion,lugarFormacion,estadoFicha) values(?,?,?,?,?)";
@@ -30,16 +30,16 @@ public int registrarFicha(FichaVo fic) throws SQLException{
         System.out.println(ps);
         ps.executeUpdate(); //Ejecutar sentencia
         ps.close(); //cerrar sentencia
-        System.out.println("Se registró la estacion correctamente");
+        System.out.println("Se registró la ficha correctamente");
     }catch(Exception e){
-        System.out.println("Error en el regisro "+e.getMessage().toString());
+        System.out.println("Error en el registro "+e.getMessage().toString());
     }
     finally{
         con.close();//cerrando conexión
     }
     return r;
 }
-//LISTAR FICHA
+//---------------------------- LISTAR FICHAS ----------------------------------------------------
 public List<FichaVo> listarFicha() throws SQLException{
     List<FichaVo> ficha=new ArrayList<>();
     sql="SELECT * from Ficha";
@@ -71,12 +71,12 @@ public List<FichaVo> listarFicha() throws SQLException{
 
 //actualizar fichas
 
-/* public void actualizarFichas(FichaVo fic) throws Exception {
+public void actualizarFichas(FichaVo fic) throws Exception {
     String sql = "UPDATE ficha SET programaFormacion = '"
             + fic.getProgramaFormacion() + "', areaFormacion = '"
             + fic.getAreaFormacion() + "', lugarFormacion = "
             +fic.getLugarFormacion()+"',estadoFicha="
-            + (fic.getEstadoFicha() == true ? "1" : "0")
+            +fic.getEstadoFicha()
             + " WHERE idFicha = " + fic.getIdFicha();
     try {
          con=Conexion.conectar();
@@ -88,7 +88,7 @@ public List<FichaVo> listarFicha() throws SQLException{
     } finally{
         con.close();//cerrando conexión
     }
-} */
+} 
 /* public int actualizarFicha(FichaVo fic) throws SQLException{
     sql="UPDATE Ficha SET programaFormacion=?,areaFormacion=? lugarFormacion=?,esradoFormacion=?;";
     try {
@@ -105,7 +105,7 @@ public List<FichaVo> listarFicha() throws SQLException{
         ps.close(); //cerrar sentencia
         System.out.println("EDITASTE CORRECTAMENTE");
     }catch(Exception e){
-        System.out.println("Error en el regisro "+e.getMessage().toString());
+        System.out.println("Error en el registro "+e.getMessage().toString());
     }
     finally{
         con.close();//cerrando conexión
@@ -127,7 +127,7 @@ public List<FichaVo> listarFicha() throws SQLException{
         ps.close(); //cerrar sentencia
         System.out.println("Se cambio el estado correctamente el usuario correctamente");
     }catch(Exception e){
-        System.out.println("Error en el regisro "+e.getMessage().toString());
+        System.out.println("Error en el registro "+e.getMessage().toString());
     }
     finally{
         con.close();//cerrando conexión
@@ -135,4 +135,33 @@ public List<FichaVo> listarFicha() throws SQLException{
 
 }
 
+//-------------------- LISTAR FICHA
+public List<FichaVo> listarFicha1() throws SQLException{
+    List<FichaVo> ficha=new ArrayList<>();
+    sql="SELECT f.idFicha,f.programaFormacion,f.areaFormacion,f.lugarFormacion,estadoFicha from Ficha";
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+        rs=ps.executeQuery(sql);
+        while(rs.next()){
+            FichaVo r= new FichaVo();
+            //Escribir  en el setter cada valor encontrado
+            r.setIdFicha(rs.getInt("idFicha"));
+            r.setProgramaFormacion(rs.getString("programaFormacion"));
+            r.setAreaFormacion(rs.getString("areaFormacion"));
+            r.setLugarFormacion(rs.getString("lugarFormacion"));
+            r.setEstadoFicha(rs.getString("estadoFicha"));
+            ficha.add(r);
+        }
+        ps.close();
+        System.out.println("consulta exitosa");
+    } catch (Exception e) {
+        System.out.println("La consulta no pudo ser ejecutado "+e.getMessage().toString());
+    }
+    finally{
+        
+        con.close();
+    }
+    return ficha;
+}
 }

@@ -29,8 +29,8 @@
             <h4 ><a href="#">Informacion</a></h4>
             <h4><a href="#">Ayuda y Soporte</a></h4>
         </div>
-            <h4 class="ingresar"><a href="views/iniciarSesion.jsp">Ingresar</a></h4>
-            <h4 class="ingresar"><a href="views/registrarse.jsp">Registrarse</a></h4>
+            <h4 class="ingresar"><a href="usuario?accion=abrirFormLogin">Ingresar</a></h4>
+            <h4 class="ingresar"><a href="usuario?accion=abrirForm">Registrarse</a></h4>
             <a href="iniciarSesion.jsp"><i class="fa-regular fa-user"></i></a>
     </header>
     
