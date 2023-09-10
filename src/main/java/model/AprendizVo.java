@@ -12,7 +12,7 @@ public class AprendizVo {
     private String fechaNacimientoAprendiz;
     private String estadoAprendiz;
     private String observaciones;
-    private FichaVo FichaVo;
+    private int idFichaFK;
 
 
 
@@ -23,7 +23,7 @@ public class AprendizVo {
 
     public AprendizVo(int idAprendiz, String nombreAprendiz, String tipodocAprendiz, int documentoAprendiz,
             int celularAprendiz, String correoAprendiz, String fechaNacimientoAprendiz, String estadoAprendiz,
-            String observaciones, model.FichaVo fichaVo) {
+            String observaciones, int idFichaFK) {
         this.idAprendiz = idAprendiz;
         this.nombreAprendiz = nombreAprendiz;
         this.tipodocAprendiz = tipodocAprendiz;
@@ -33,7 +33,7 @@ public class AprendizVo {
         this.fechaNacimientoAprendiz = fechaNacimientoAprendiz;
         this.estadoAprendiz = estadoAprendiz;
         this.observaciones = observaciones;
-        FichaVo = fichaVo;
+        this.idFichaFK = idFichaFK;
     }
 
 
@@ -146,15 +146,20 @@ public class AprendizVo {
 
 
 
-    public FichaVo getFichaVo() {
-        return FichaVo;
+    public int getIdFichaFK() {
+        return idFichaFK;
     }
 
 
 
-    public void setFichaVo(FichaVo fichaVo) {
-        FichaVo = fichaVo;
+    public void setIdFichaFK(int idFichaFK) {
+        this.idFichaFK = idFichaFK;
     }
+
+
+
+    
+
 
     
 }

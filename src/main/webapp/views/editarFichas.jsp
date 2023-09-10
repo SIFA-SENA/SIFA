@@ -43,15 +43,13 @@
     <h1 class="title" id="crearFicha">REGISTRAR FICHA</h1>
 
     <form action="ficha" method="POST" class="formularioRgeistro">
+  
     <div class="formularioRgeistro ">
         <div>
             <div class="registrarFicha">
-                <form class="registro" method="POST">
+                
                     <h2 id="Ficha">REGISTRAR FICHA! </h2>
-                    <div class="program">
-                        <label> Numero de ficha</label><p></p>
-                        <input type="text" name="idFicha" id="idFicha" value="${ficha.idFicha}" >
-                    </div>
+                    
                     <div class="program">
                         <label> Programa de formación </label><p></p>
                         <input type="text" name="programaFormacion" id="programaFormacion" value="${ficha.programaFormacion}">
@@ -67,15 +65,16 @@
                     
                     <div class="Estado">
                         <label> Estado</label><p></p>
-                        <select name="estadoFicha" id="estadoFicha" >
+                        <select name="estadoFicha" id="estadoFicha" value="${ficha.estadoFicha}" >
                             <option value="Lectiva">Lectiva</option>
                             <option value="Productiva">Productiva</option>
                             <option value="Formacion terminada">Formacion terminada</option>
                         </select>
                     </div>
-
-                <input type="submit" name="accion" value="actualizar">
+                
+                <input type="submit" name="accion" value="actualizarFicha">
             </div>
+      
         </form>
 
 

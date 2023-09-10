@@ -17,6 +17,7 @@ public class UsuarioDao {
     int r; 
     UsuarioVo usuarioVo;
 /*----------------------------------------SECCION DE REGISTRAR USUARIO--------------------------------------*/ 
+
     public int registrar(UsuarioVo usu) throws SQLException{
         sql="INSERT INTO Usuario(nombreUsuario,tipodocUsuario,documentoUsuario,celularUsuario,rol,correo,clave) values(?,?,?,?,?,?,?)";
         try{
@@ -43,6 +44,7 @@ public class UsuarioDao {
     }
 
 /*------------------------SECCION DE CONSULTAR USUARIO------------------------------------------------*/
+
     public List<UsuarioVo> listar() throws SQLException{
         List<UsuarioVo> usuario=new ArrayList<>();
         sql="SELECT *from  usuario";
@@ -77,6 +79,7 @@ public class UsuarioDao {
     }
 
     //----------------------------------------- INICIAR SESION -----------------------
+
     public int validar(UsuarioVo usu) throws SQLException{
         int r = 0;
         sql="select * from Usuario where nombreUsuario=? and clave=? ";
@@ -107,5 +110,59 @@ public class UsuarioDao {
         
     }
 
-}    
+//---------------------------- LISTAR USUARIO  POR ID -----------------------------------
+public UsuarioVo listarIdUsu(int id){
+    UsuarioVo usu=new UsuarioVo();
+    String sql="select * from Usuario where idUsuario="+id;
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+        rs=ps.executeQuery(sql);
+        while (rs.next()) {
+            usu.setNombreUsuario(rs.getString(2));
+            usu.setTipodocUsuario(rs.getString(3));
+            usu.setDocumentoUsuario(rs.getInt(4));
+            usu.setCelularUsuario(rs.getInt(5));
+             usu.setRol(rs.getString(6));
+            usu.setCorreo(rs.getString(7));
+            usu.setClave(rs.getString(8));
+            
+        }
+    } catch (Exception e) {
+
+         System.out.println("Error en listar por id "+e.getMessage().toString());
+        
+    }
+    return usu;
+}
+//----------------------- ACTUALIZAR USUARIO ------------------------
+public int actualizarUsuario(UsuarioVo usu) throws SQLException{
+    String sql="UPDATE Usuario SET nombreUsuario=?,tipodocUsuario=?,documentoUsuario=?,celularUsuario=?,rol=?,correo=?,clave=? WHERE idUsuario=?";
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+    
+    
+        ps.setString(1, usu.getNombreUsuario());
+        ps.setString(2, usu.getTipodocUsuario());
+        ps.setInt(3, usu.getDocumentoUsuario());
+        ps.setInt(4,usu.getCelularUsuario());
+        ps.setString(5,usu.getRol());
+        ps.setString(6,usu.getCorreo());
+        ps.setString(7,usu.getClave());
+        ps.setInt(8,usu.getIdUsuario());
+
+        System.out.println(ps);
+        ps.executeUpdate(); //Ejecutar sentencia
+        ps.close(); //cerrar sentencia
+        System.out.println("EDITASTE CORRECTAMENTE");
+    }catch(Exception e){
+        System.out.println("Error en el registro "+e.getMessage().toString());
+    }
+    finally{
+        con.close();//cerrando conexión
+    }
+    return r;
+}
+}
 

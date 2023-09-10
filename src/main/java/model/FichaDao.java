@@ -69,37 +69,42 @@ public List<FichaVo> listarFicha() throws SQLException{
     return ficha;
 }
 
-//actualizar fichas
 
-public void actualizarFichas(FichaVo fic) throws Exception {
-    String sql = "UPDATE ficha SET programaFormacion = '"
-            + fic.getProgramaFormacion() + "', areaFormacion = '"
-            + fic.getAreaFormacion() + "', lugarFormacion = "
-            +fic.getLugarFormacion()+"',estadoFicha="
-            +fic.getEstadoFicha()
-            + " WHERE idFicha = " + fic.getIdFicha();
-    try {
-         con=Conexion.conectar();
-        ps=con.prepareStatement(sql);
-        rs=ps.executeQuery(sql); 
-        
-    } catch (Exception e) {
-        System.out.println("Error en la actualizacion "+e.getMessage().toString());
-    } finally{
-        con.close();//cerrando conexión
-    }
-} 
-/* public int actualizarFicha(FichaVo fic) throws SQLException{
-    sql="UPDATE Ficha SET programaFormacion=?,areaFormacion=? lugarFormacion=?,esradoFormacion=?;";
+//---------------------------- LISTAR FICHA POR ID -----------------------------------
+public FichaVo listarId(int id){
+    FichaVo fic=new FichaVo();
+    String sql="select * from Ficha where idFicha="+id;
     try {
         con=Conexion.conectar();
         ps=con.prepareStatement(sql);
-        rs=ps.executeQuery(sql);  
+        rs=ps.executeQuery(sql);
+        while (rs.next()) {
+            fic.setProgramaFormacion(rs.getString(2));
+            fic.setAreaFormacion(rs.getString(3));
+            fic.setLugarFormacion(rs.getString(4));
+            fic.setEstadoFicha(rs.getString(5));
+        }
+    } catch (Exception e) {
+
+         System.out.println("Error en listar por id "+e.getMessage().toString());
         
+    }
+    return fic;
+}
+//----------------------- ACTUALIZAR FICHA ------------------------
+public int actualizarFicha(FichaVo fic) throws SQLException{
+    String sql="UPDATE Ficha SET programaFormacion=?,areaFormacion=?,lugarFormacion=?,estadoFicha=? WHERE idFicha=?";
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+    
+    
         ps.setString(1, fic.getProgramaFormacion());
         ps.setString(2, fic.getAreaFormacion());
         ps.setString(3, fic.getLugarFormacion());
-        ps.setBoolean(4,fic.getEstadoFicha());
+        ps.setString(4,fic.getEstadoFicha());
+        ps.setInt(5,fic.getIdFicha());
+
         System.out.println(ps);
         ps.executeUpdate(); //Ejecutar sentencia
         ps.close(); //cerrar sentencia
@@ -111,57 +116,6 @@ public void actualizarFichas(FichaVo fic) throws Exception {
         con.close();//cerrando conexión
     }
     return r;
-} */
-//activar o inactivar ficha
-//---------------- ACTIVAR E INACTIVAR USUARIOS ---------------------
-
- public void estadoF(FichaVo ficha) throws SQLException{
-    String sql = "UPDATE ficha SET estadoFicha = "
-                + ficha.getEstadoFicha()
-                + " WHERE idFicha = " + ficha.getIdFicha();
-    try{
-        con=Conexion.conectar(); //abrir conexión
-        ps=con.prepareStatement(sql); //preparar sentencia
-         System.out.println(ps);
-        ps.executeUpdate(); //Ejecutar sentencia
-        ps.close(); //cerrar sentencia
-        System.out.println("Se cambio el estado correctamente el usuario correctamente");
-    }catch(Exception e){
-        System.out.println("Error en el registro "+e.getMessage().toString());
-    }
-    finally{
-        con.close();//cerrando conexión
-    }
-
 }
 
-//-------------------- LISTAR FICHA
-public List<FichaVo> listarFicha1() throws SQLException{
-    List<FichaVo> ficha=new ArrayList<>();
-    sql="SELECT f.idFicha,f.programaFormacion,f.areaFormacion,f.lugarFormacion,estadoFicha from Ficha";
-    try {
-        con=Conexion.conectar();
-        ps=con.prepareStatement(sql);
-        rs=ps.executeQuery(sql);
-        while(rs.next()){
-            FichaVo r= new FichaVo();
-            //Escribir  en el setter cada valor encontrado
-            r.setIdFicha(rs.getInt("idFicha"));
-            r.setProgramaFormacion(rs.getString("programaFormacion"));
-            r.setAreaFormacion(rs.getString("areaFormacion"));
-            r.setLugarFormacion(rs.getString("lugarFormacion"));
-            r.setEstadoFicha(rs.getString("estadoFicha"));
-            ficha.add(r);
-        }
-        ps.close();
-        System.out.println("consulta exitosa");
-    } catch (Exception e) {
-        System.out.println("La consulta no pudo ser ejecutado "+e.getMessage().toString());
-    }
-    finally{
-        
-        con.close();
-    }
-    return ficha;
-}
 }

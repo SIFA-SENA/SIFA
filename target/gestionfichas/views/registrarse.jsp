@@ -80,11 +80,6 @@
                     </div>
                 
                     <div class="name">
-                        <label for="tipoContrato">Tipo Contrato</label>
-                        <input type="text" name="tipoContrato" id="tipoContrato" class="form-control" required>
-                    </div>
-                
-                    <div class="name">
                         <label for="correo">Correo</label>
                         <input type="email" name="correo" id="correo" class="form-control" required>
                     </div>

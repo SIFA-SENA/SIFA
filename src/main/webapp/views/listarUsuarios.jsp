@@ -55,7 +55,8 @@
                 <th>Celular</th>
                 <th>Correo</th>
                 <th>Clave</th>
-                <th>Cargo</th>     
+                <th>Cargo</th>   
+                <th>Editar</th>  
             </tr>       
                   
                   <tr>
@@ -70,8 +71,9 @@
                         <td>${usuario.getCorreo()}</td>
                         <td>${usuario.getClave()}</td>
                         <td>${usuario.getRol()}</td>
+                        <td><a href="usuario?accion=editar&id=${usuario.getIdUsuario()}"><button>editar</button></a></td>
                         
-                    </td>
+                    </tr>
               
         </c:forEach> 
        

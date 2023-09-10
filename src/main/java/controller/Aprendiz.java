@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.FichaDao;
 import model.FichaVo;
+import model.UsuarioVo;
 import model.AprendizDao;
 import model.AprendizVo;
 
@@ -30,8 +32,16 @@ public class Aprendiz extends HttpServlet {
         
          switch (accion) {
 
+            case "listarA":
+            listarAprendiz(req,resp);
+            break;
+            
             case "FormRegistrarA":
             FormRegistrarA(req,resp);
+            break;
+
+            case "editarA":
+            editarAprendiz(req,resp);
             break;
     
             }
@@ -46,9 +56,11 @@ public class Aprendiz extends HttpServlet {
             case "registrarAprendiz":
             registrarAprendiz(req,resp);
             break;
-           /*  case "actualizarFicha":
-            editarFicha(req,resp);
-            */
+
+            case "actualizarAprendiz":
+            actualizarAprendiz(req,resp);
+            break;
+           
            
         } 
     }
@@ -64,7 +76,7 @@ public class Aprendiz extends HttpServlet {
             System.out.println("El formulario NO ha sido abierto"+e.getMessage().toString());
         }
     }
-
+//-------------------------------------------- REGISTRAR APRENDIZ ----------------------------------------------
     private void registrarAprendiz(HttpServletRequest req, HttpServletResponse resp) {
         System.out.println("Entró al Registro de ficha");
 
@@ -94,16 +106,81 @@ public class Aprendiz extends HttpServlet {
             av.setObservaciones((req.getParameter("observaciones")));
         }
         if(req.getParameter("idFichaFK")!=null){
-            fv.setIdFicha(Integer.parseInt(req.getParameter("idFichaFK")));
+            av.setIdFichaFK(Integer.parseInt(req.getParameter("idFichaFK")));
+           
         }
 
         try {
             ad.registrarAprendiz(av);
             System.out.println("Registro insertado correctamente");
-            req.getRequestDispatcher("ficha?accion=FormRegistrarA").forward(req, resp);
+            req.getRequestDispatcher("views/gestionFichas.jsp").forward(req, resp);
         } catch (Exception e) {
             System.out.println("Error en la inserción del registro "+e.getMessage().toString());
         }
     }
+
+    //---------------------------------------- LISTAR APRENDIZ-------------------------
+     private void listarAprendiz(HttpServletRequest req, HttpServletResponse resp) {
+        try {
+            List aprendiz=ad.listarAprendiz();
+            req.setAttribute("aprendiz",aprendiz);
+            req.getRequestDispatcher("views/listarAprendices.jsp").forward(req, resp);
+            System.out.println("Datos listados correctamente");
+        } catch (Exception e) {
+            System.out.println("Hay problemas al listar los datos "+e.getMessage().toString());
     }
+    }
+
+        //-------------------- ABRIR FORMULARIO EDITAR POR ID ---------------------------------------------------
+int ida;
+ private void editarAprendiz(HttpServletRequest req, HttpServletResponse resp) {
     
+      ida=Integer.parseInt(req.getParameter("id"));
+        AprendizVo a=ad.listarIdApr(ida);
+          try {
+            req.setAttribute("aprendiz",a);
+             req.getRequestDispatcher("views/editarAprendiz.jsp").forward(req, resp);
+            System.out.println("Datos listados correctamente");
+        } catch (Exception e) {
+            System.out.println("Hay problemas al listar los datos "+e.getMessage().toString());
+    }
+}
+
+//--------------------------------------------EDITAR FICHA ----------------------------------------------
+
+  private void actualizarAprendiz(HttpServletRequest req, HttpServletResponse resp) {
+
+        String nombreAprendiz=req.getParameter("nombreAprendiz");
+        String tipodocAprendiz=req.getParameter("tipodocAprendiz");
+        int documentoAprendiz=Integer.parseInt(req.getParameter("documentoAprendiz"));
+        int celularAprendiz=Integer.parseInt(req.getParameter("celularAprendiz"));
+        String correoAprendiz=req.getParameter("correoAprendiz");
+        String fechaNacimientoAprendiz=req.getParameter("fechaNacimientoAprendiz");
+        String estadoAprendiz=req.getParameter("estadoAprendiz");
+        String observaciones=req.getParameter("observaciones");
+        int idFichaFK=Integer.parseInt(req.getParameter("idFichaFK"));
+
+        av.setNombreAprendiz(nombreAprendiz);
+        av.setTipodocAprendiz(tipodocAprendiz);
+        av.setDocumentoAprendiz(documentoAprendiz);
+        av.setCelularAprendiz(celularAprendiz);
+        av.setCorreoAprendiz(correoAprendiz);
+        av.setFechaNacimientoAprendiz(fechaNacimientoAprendiz);
+        av.setEstadoAprendiz(estadoAprendiz);
+        av.setObservaciones(observaciones);
+        av.setIdFichaFK(idFichaFK);
+        av.setIdAprendiz(ida);
+       
+         try {
+            ad.actualizarAprendiz(av);
+            List aprendiz=ad.listarAprendiz();
+            req.setAttribute("aprendiz",aprendiz);
+            req.getRequestDispatcher("views/listarAprendices.jsp").forward(req, resp);
+         } catch (Exception e) {
+          
+         }
+         
+    }
+
+
+}

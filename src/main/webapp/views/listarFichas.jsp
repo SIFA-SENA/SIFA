@@ -65,8 +65,7 @@
                <td>${ficha.getLugarFormacion()}</td>
                <td>${ficha.getEstadoFicha()}</td> 
                <td>
-                <input type="submit" id="item" value="${ficha.idFicha}">
-                        <a href="ficha?accion=actualizar&cod=${ficha.getIdFicha()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
+                        <a href="ficha?accion=Editar&id=${ficha.getIdFicha()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
                           <i class="fa-solid fa-pen"></i></a>
                 <!-- <button type="submit" class="btn btn-editar"><a href="usuario?accion=editarUsuario&cod=${usuario.getIdUsua()}"></a><i class="fa-solid fa-pen"></i></button> -->
               </td>

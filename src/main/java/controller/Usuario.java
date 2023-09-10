@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.FichaVo;
 import model.UsuarioDao;
 import model.UsuarioVo;
 
@@ -37,7 +38,11 @@ public class Usuario extends HttpServlet{
             case "abrirFormLogin":
                 abrirFormLogin(req, resp);
             break;
-            
+            case "editar":
+                editarUsuario(req, resp);
+            break;
+           
+
             default:
                 System.out.println("La pagina no se ha encontrado");
             }
@@ -60,6 +65,13 @@ public class Usuario extends HttpServlet{
                     System.out.println("No se pudo ingresar al sistema "+e.getMessage().toString());
                 }
             break;
+            case "actualizar":
+            actualizarUsuarios(req, resp);
+            break;
+            
+        
+
+           
             
             
         }
@@ -81,6 +93,7 @@ public class Usuario extends HttpServlet{
     private void add (HttpServletRequest req, HttpServletResponse resp) {
 
         System.out.println("ingresaste a registrar usuario");
+
         if(req.getParameter("idUsuario")!=null){
             uv.setIdUsuario(Integer.parseInt(req.getParameter("idUsuario")));
         }
@@ -142,6 +155,8 @@ private void abrirFormLogin(HttpServletRequest req, HttpServletResponse resp){
 
     int r=0;
 
+//-------------------------- INICIAR SESION -----------------------------------------
+
 private void iniciarSesionl(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ServletException, IOException{
         System.out.println("ingresaste al formulario");
         String accion = req.getParameter("accion");
@@ -168,6 +183,57 @@ private void iniciarSesionl(HttpServletRequest req, HttpServletResponse resp) th
 
         }
     }
+
+    //-------------------- ABRIR FORMULARIO EDITAR POR ID ---------------------------------------------------
+int idu;
+ private void editarUsuario(HttpServletRequest req, HttpServletResponse resp) {
+    
+      idu=Integer.parseInt(req.getParameter("id"));
+        UsuarioVo u=ud.listarIdUsu(idu);
+          try {
+            req.setAttribute("usuario",u);
+             req.getRequestDispatcher("views/editarUsuarios.jsp").forward(req, resp);
+            System.out.println("Datos listados correctamente");
+        } catch (Exception e) {
+            System.out.println("Hay problemas al listar los datos "+e.getMessage().toString());
+    }
+}
+
+//--------------------------------------------EDITAR FICHA ----------------------------------------------
+
+  private void actualizarUsuarios(HttpServletRequest req, HttpServletResponse resp) {
+
+        String nombreUsuario=req.getParameter("nombreUsuario");
+        String tipodocUsuario=req.getParameter("tipodocUsuario");
+        int documentoUsuario=Integer.parseInt(req.getParameter("documentoUsuario"));
+        int celularUsuario=Integer.parseInt(req.getParameter("celularUsuario"));
+        String rol=req.getParameter("rol");
+        String correo=req.getParameter("correo");
+        String clave=req.getParameter("clave");
+
+        uv.setNombreUsuario(nombreUsuario);
+        uv.setTipodocUsuario(tipodocUsuario);
+        uv.setDocumentoUsuario(documentoUsuario);
+        uv.setCelularUsuario(celularUsuario);
+        uv.setRol(rol);
+        uv.setCorreo(correo);
+        uv.setClave(clave);
+        uv.setIdUsuario(idu);
+       
+         try {
+            ud.actualizarUsuario(uv);
+            List usuario=ud.listar();
+            req.setAttribute("usuario", usuario);
+            req.getRequestDispatcher("views/listarUsuarios.jsp").forward(req, resp);
+         } catch (Exception e) {
+          
+         }
+         
+    }
+
+
+
+
 
 }
 
