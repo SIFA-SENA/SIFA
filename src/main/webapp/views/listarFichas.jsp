@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/fichas.css">
     <link rel="stylesheet" type="text/css" href="css/style_gestionFichas.css">
-    <title>Gestion fichas</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-Gestion fichas</title>
 </head>
 <body>
     <!--HEADER-->
@@ -22,17 +23,18 @@
         </div>
         <nav>
             <ul class="title">
-                <h1 class="h1">GESTIONA TU FICHA </h1>
+                <h1 class="h1">GESTIONA TU FICHA</h1>
             </ul>
         </nav>
     </header>
 
     <header class="navegation">
         <div class="options">
-            <h4><a href="#">Consultar Ficha</a></h4>
-            <h4><a href="ficha?accion=abrirForm">Crear Ficha</a></h4>
+            <h4><a href="ficha?accion=abrirForm">Registrar Ficha</a></h4>
+            
             <h4><a href="#">Ayuda y Soporte</a></h4>
         </div>
+        <h4><a href="ficha?accion=listar">Atras</a></h4>
             <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
             <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></i></a>
     </header>

@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/fichas.css">
     <link rel="stylesheet" type="text/css" href="css/style_gestionFichas.css">
-    <title>Gestion fichas</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-Gestion Aprendiz</title>
 </head>
 <body>
     <!--HEADER-->
@@ -61,7 +62,7 @@
                    <th colspan="2"><center>Acciones</center></th> 
                </tr>
                
-       <c:forEach var="aprendiz" items="${aprendiz}">         
+       <c:forEach var="aprendiz" items="${aprendiz}"  >         
                
                <tr>
                <td>${aprendiz.getIdAprendiz()}</td>
@@ -73,7 +74,7 @@
                <td>${aprendiz.getFechaNacimientoAprendiz()}</td> 
                <td>${aprendiz.getEstadoAprendiz()}</td> 
                <td>${aprendiz.getObservaciones()}</td> 
-               <td>${aprendiz.getIdFichaFK()}</td> 
+                <td>${aprendiz.getFichaVo().getIdFicha()}</td>
                <td>
                         <a href="aprendiz?accion=editarA&id=${aprendiz.getIdAprendiz()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
                           <i class="fa-solid fa-pen"></i></a>

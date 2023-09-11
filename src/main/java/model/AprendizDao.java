@@ -17,7 +17,7 @@ AprendizVo aprendizVo;
 FichaVo FichaVo;
 
 //------------------------------- REGISTRAR APRENDIZ -------------------------------------
-public int registrarAprendiz(AprendizVo apr) throws SQLException{
+public int registrarAprendiz(AprendizVo apr, FichaVo fic) throws SQLException{
     System.out.println("entro a registrar ficha");
     sql="INSERT INTO Aprendiz(nombreAprendiz,tipodocAprendiz,documentoAprendiz,celularAprendiz,correoAprendiz,fechaNacimientoAprendiz,estadoAprendiz,observaciones,idFichaFK) values(?,?,?,?,?,?,?,?,?)";
     try{
@@ -31,7 +31,7 @@ public int registrarAprendiz(AprendizVo apr) throws SQLException{
         ps.setString(6,apr.getFechaNacimientoAprendiz());
         ps.setString(7,apr.getEstadoAprendiz());
         ps.setString(8,apr.getObservaciones());
-        ps.setInt(9,apr.getIdFichaFK());
+        ps.setInt(9,fic.getIdFicha());
         System.out.println(ps);
         ps.executeUpdate(); //Ejecutar sentencia
         ps.close(); //cerrar sentencia
@@ -47,13 +47,14 @@ public int registrarAprendiz(AprendizVo apr) throws SQLException{
 //---------------------------------------- LISTAR APRENDIZ -------------------------------------------
 public List<AprendizVo> listarAprendiz() throws SQLException{
     List<AprendizVo> aprendiz=new ArrayList<>();
-    sql="SELECT * from Aprendiz";
+    sql="SELECT A.idAprendiz,A.nombreAprendiz,A.tipodocAprendiz,A.documentoAprendiz,A.celularAprendiz,A.correoAprendiz,A.fechaNacimientoAprendiz,A.estadoAprendiz,A.observaciones,F.idFicha from Aprendiz A INNER JOIN Ficha F On F.idFicha=A.idFichaFK";
     try {
         con=Conexion.conectar();
         ps=con.prepareStatement(sql);
         rs=ps.executeQuery(sql);
         while(rs.next()){
             AprendizVo r= new AprendizVo();
+            
             //Escribir  en el setter cada valor encontrado
             r.setIdAprendiz(rs.getInt("idAprendiz"));
             r.setNombreAprendiz(rs.getString("nombreAprendiz"));
@@ -64,10 +65,11 @@ public List<AprendizVo> listarAprendiz() throws SQLException{
             r.setFechaNacimientoAprendiz(rs.getString("fechaNacimientoAprendiz"));
             r.setEstadoAprendiz(rs.getString("estadoAprendiz"));
             r.setObservaciones(rs.getString("observaciones"));
-            r.setIdFichaFK(rs.getInt("idFichaFK"));
-
-
+            r.setFichaVo(new FichaVo());
+            r.getFichaVo().setIdFicha(rs.getInt("idFicha"));
+        
             aprendiz.add(r);
+     
         }
         ps.close();
         System.out.println("consulta exitosa");
@@ -84,6 +86,7 @@ public List<AprendizVo> listarAprendiz() throws SQLException{
 //---------------------------- LISTAR APRENDIZ POR ID -----------------------------------
 public AprendizVo listarIdApr(int id){
     AprendizVo apr=new AprendizVo();
+    FichaVo fic=new FichaVo();
     String sql="select * from Aprendiz where idAprendiz="+id;
     try {
         con=Conexion.conectar();
@@ -98,7 +101,7 @@ public AprendizVo listarIdApr(int id){
             apr.setFechaNacimientoAprendiz(rs.getString(7));
             apr.setEstadoAprendiz(rs.getString(8));
             apr.setObservaciones(rs.getString(9));
-            apr.setIdFichaFK(rs.getInt(10));
+            fic.setIdFicha(rs.getInt(10));
             
         }
     } catch (Exception e) {
@@ -109,7 +112,7 @@ public AprendizVo listarIdApr(int id){
     return apr;
 }
 //----------------------- ACTUALIZAR APRENDIZ ------------------------
-public int actualizarAprendiz(AprendizVo apr) throws SQLException{
+public int actualizarAprendiz(AprendizVo apr,FichaVo fic) throws SQLException{
     String sql="UPDATE Aprendiz SET nombreAprendiz=?,tipodocAprendiz=?,documentoAprendiz=?,celularAprendiz=?,correoAprendiz=?,fechaNacimientoAprendiz=?,estadoAprendiz=?,observaciones=?,idFichaFK=? WHERE idAprendiz=?";
     try {
         con=Conexion.conectar();
@@ -124,7 +127,7 @@ public int actualizarAprendiz(AprendizVo apr) throws SQLException{
         ps.setString(6,apr.getFechaNacimientoAprendiz());
         ps.setString(7,apr.getEstadoAprendiz());
         ps.setString(8,apr.getObservaciones());
-        ps.setInt(9,apr.getIdFichaFK());
+        ps.setInt(9,fic.getIdFicha());
         ps.setInt(10,apr.getIdAprendiz());
 
         System.out.println(ps);

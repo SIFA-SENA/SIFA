@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +13,7 @@
     <link rel="stylesheet" href="css/style_index.css">
     <link rel="shortcut icon" href="img/logo_sena.jpeg">
 
-    <title>Portal de gestion de fichas</title>
+    <title>SIFA-Portal de gestion de fichas</title>
 </head>
 <body>
     <header class="header1">
@@ -19,7 +22,7 @@
         </div>
         <nav>
             <ul class="title">
-                <h1 class="h1">GESTIONA TU FICHA</h1>
+                <h1 class="h1">SIFA</h1>
             </ul>
         </nav>
     </header>
@@ -38,8 +41,8 @@
     <diV class="wrapper">
         <video class="video-slide active" src="img/SENA, el lugar de las oportunidades (videoclip).mp4" autoplay muted loop></video>
         <div class="text-box">
-            <h2>De que trata</h2>
-            <p class="text">Bienvenido a Gestiona tu ficha, aqui podras 
+            <h2>Bienvenido</h2>
+            <p class="text">Gestiona tu ficha, aqui podras 
                 observar las listas de tus fichas preferidas, 
                 podras interactuar con ellas y mas.
             Trata de un sistema de gestion de fichas y aprendices para manejar la información mas facil y practica desde una vista mas sencilla, con el buscamos agilizar procesos y mas. </p>
@@ -48,7 +51,7 @@
 
 
     <diV class="wrapper2">
-        <img class="gente2" src="img/gente.jpeg" alt="">
+        
         <div class="text-box2">
             <h2>Quienes lo pueden usar</h2>
             <p class="text">
@@ -56,6 +59,7 @@
                 Sera utilizados por instructores permitidos y administradores que necesiten de la información anterior 
             </p>
         </div>
+        <img class="gente2" src="img/gente.jpeg" alt="">
     </diV>
 
 

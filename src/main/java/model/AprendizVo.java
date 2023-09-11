@@ -12,18 +12,18 @@ public class AprendizVo {
     private String fechaNacimientoAprendiz;
     private String estadoAprendiz;
     private String observaciones;
-    private int idFichaFK;
+    private FichaVo FichaVo;
 
 
 
     public AprendizVo() {
+        
     }
-
 
 
     public AprendizVo(int idAprendiz, String nombreAprendiz, String tipodocAprendiz, int documentoAprendiz,
             int celularAprendiz, String correoAprendiz, String fechaNacimientoAprendiz, String estadoAprendiz,
-            String observaciones, int idFichaFK) {
+            String observaciones, model.FichaVo fichaVo) {
         this.idAprendiz = idAprendiz;
         this.nombreAprendiz = nombreAprendiz;
         this.tipodocAprendiz = tipodocAprendiz;
@@ -33,9 +33,8 @@ public class AprendizVo {
         this.fechaNacimientoAprendiz = fechaNacimientoAprendiz;
         this.estadoAprendiz = estadoAprendiz;
         this.observaciones = observaciones;
-        this.idFichaFK = idFichaFK;
+        FichaVo = fichaVo;
     }
-
 
 
     public int getIdAprendiz() {
@@ -43,11 +42,9 @@ public class AprendizVo {
     }
 
 
-
     public void setIdAprendiz(int idAprendiz) {
         this.idAprendiz = idAprendiz;
     }
-
 
 
     public String getNombreAprendiz() {
@@ -55,11 +52,9 @@ public class AprendizVo {
     }
 
 
-
     public void setNombreAprendiz(String nombreAprendiz) {
         this.nombreAprendiz = nombreAprendiz;
     }
-
 
 
     public String getTipodocAprendiz() {
@@ -67,11 +62,9 @@ public class AprendizVo {
     }
 
 
-
     public void setTipodocAprendiz(String tipodocAprendiz) {
         this.tipodocAprendiz = tipodocAprendiz;
     }
-
 
 
     public int getDocumentoAprendiz() {
@@ -79,11 +72,9 @@ public class AprendizVo {
     }
 
 
-
     public void setDocumentoAprendiz(int documentoAprendiz) {
         this.documentoAprendiz = documentoAprendiz;
     }
-
 
 
     public int getCelularAprendiz() {
@@ -91,11 +82,9 @@ public class AprendizVo {
     }
 
 
-
     public void setCelularAprendiz(int celularAprendiz) {
         this.celularAprendiz = celularAprendiz;
     }
-
 
 
     public String getCorreoAprendiz() {
@@ -103,11 +92,9 @@ public class AprendizVo {
     }
 
 
-
     public void setCorreoAprendiz(String correoAprendiz) {
         this.correoAprendiz = correoAprendiz;
     }
-
 
 
     public String getFechaNacimientoAprendiz() {
@@ -115,11 +102,9 @@ public class AprendizVo {
     }
 
 
-
     public void setFechaNacimientoAprendiz(String fechaNacimientoAprendiz) {
         this.fechaNacimientoAprendiz = fechaNacimientoAprendiz;
     }
-
 
 
     public String getEstadoAprendiz() {
@@ -127,11 +112,9 @@ public class AprendizVo {
     }
 
 
-
     public void setEstadoAprendiz(String estadoAprendiz) {
         this.estadoAprendiz = estadoAprendiz;
     }
-
 
 
     public String getObservaciones() {
@@ -139,26 +122,20 @@ public class AprendizVo {
     }
 
 
-
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
 
 
-
-    public int getIdFichaFK() {
-        return idFichaFK;
+    public FichaVo getFichaVo() {
+        return FichaVo;
     }
 
 
-
-    public void setIdFichaFK(int idFichaFK) {
-        this.idFichaFK = idFichaFK;
+    public void setFichaVo(FichaVo fichaVo) {
+        FichaVo = fichaVo;
     }
 
-
-
-    
 
 
     

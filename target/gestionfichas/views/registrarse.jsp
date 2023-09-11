@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css"  href="css/style_registrar.css">
-    <title>Registro</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-Registro</title>
 </head>
 <body>
     <header class="header1">

@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style_gestionFichas.css">
-    <title>Gestion fichas</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-Gestion Fichas</title>
 </head>
 <body>
     <!--HEADER-->
@@ -29,7 +30,7 @@
     <header class="navegation">
         <div class="options">
             <h4><a href="ficha?accion=listar">Consultar Ficha</a></h4>
-            <h4><a href="ficha?accion=abrirForm">Crear Ficha</a></h4>
+            <h4><a href="ficha?accion=abrirForm">Registrar Ficha</a></h4>
             <h4><a href="usuario?accion=consultar">Consultar Usuarios</a></h4>
             <h4><a href="aprendiz?accion=FormRegistrarA">Registrar Aprendiz</a></h4>
             <h4><a href="aprendiz?accion=listarA">Consultar Aprendiz</a></h4>
@@ -49,22 +50,21 @@
         <div>
             <div class="registrarFicha">
                 <form class="registro" method="POST">
-                    <h2 id="Ficha">REGISTRAR FICHA! </h2>
                     <div class="program">
                         <label> Numero de ficha</label><p></p>
-                        <input type="text" name="idFicha" id="idFIcha" >
+                        <input type="text" name="idFicha" id="idFIcha" required>
                     </div>
                     <div class="program">
                         <label> Programa de formación </label><p></p>
-                        <input type="text" name="programaFormacion" id="programaFormacion" >
+                        <input type="text" name="programaFormacion" id="programaFormacion" required>
                     </div>
                     <div class="area">
                         <label> Area de formación </label><p></p>
-                        <input type="text" name="areaFormacion" id="areaFormacion" >
+                        <input type="text" name="areaFormacion" id="areaFormacion" required>
                     </div>
                     <div class="sede">
                         <label> Lugar Formacion</label><p></p>
-                        <input type="text" name="lugarFormacion" id="lugarFormacion" >
+                        <input type="text" name="lugarFormacion" id="lugarFormacion" required>
                     </div>
                     <div class="Estado">
                         <label> Estado</label><p></p>

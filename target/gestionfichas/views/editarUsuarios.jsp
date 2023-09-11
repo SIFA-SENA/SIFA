@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css"  href="css/style_registrar.css">
-    <title>Registro</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-editar usuario</title>
 </head>
 <body>
     <header class="header1">
@@ -54,7 +55,7 @@
                     <h2 id="Administrador">REGISTRAR USUARIO! </h2>
                     <div class="name">
                         <label for="nombreUsuario">Nombre</label>
-                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required value="${usuario.nombreUsuario}">
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required value="${usuario.nombreUsuario}" > 
                     </div>
                     <div class="name">
                         <label for="tipodocUsuario">Tipo documento</label>

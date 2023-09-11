@@ -10,16 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style_inicioSesion.css">
-    <title>Iniciar Sesion</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-Iniciar Sesion</title>
 </head>
 <body>
     <header class="header1">
         <div class="logo">
-            <img src="../img/logo_sena.jpeg" width="80px">
+            <img src="img/logo_sena.jpeg" width="80px">
         </div>
         <nav>
             <ul class="title">
-                <h1 class="h1">GESTIONA TU FICHA - INICIAR SESION </h1>
+                <h1 class="h1"> INICIAR SESION </h1>
             </ul>
         </nav>
     </header>
@@ -41,11 +42,11 @@
                     <h2>Usuario</h2>
                     <div class="username">
                         <label> Correo Electronico</label><p></p>
-                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="username">
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="username" required>
                     </div>
                     <div class="password">
                         <label>Contraseña</label><p></p>
-                        <input type="password" name="clave" id="clave" class="password">
+                        <input type="password" name="clave" id="clave" class="password" required>
                     
                     </div> 
                     <input type="submit" class="btn btn-primary" name="accion" value="iniciarSesionl"  ></input>

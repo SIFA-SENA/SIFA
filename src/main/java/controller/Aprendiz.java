@@ -106,12 +106,13 @@ public class Aprendiz extends HttpServlet {
             av.setObservaciones((req.getParameter("observaciones")));
         }
         if(req.getParameter("idFichaFK")!=null){
-            av.setIdFichaFK(Integer.parseInt(req.getParameter("idFichaFK")));
+            fv.setIdFicha(Integer.parseInt(req.getParameter("idFichaFK")));
+            av.setFichaVo(fv);
            
         }
 
         try {
-            ad.registrarAprendiz(av);
+            ad.registrarAprendiz(av,fv);
             System.out.println("Registro insertado correctamente");
             req.getRequestDispatcher("views/gestionFichas.jsp").forward(req, resp);
         } catch (Exception e) {
@@ -168,11 +169,11 @@ int ida;
         av.setFechaNacimientoAprendiz(fechaNacimientoAprendiz);
         av.setEstadoAprendiz(estadoAprendiz);
         av.setObservaciones(observaciones);
-        av.setIdFichaFK(idFichaFK);
+        fv.setIdFicha(idFichaFK);
         av.setIdAprendiz(ida);
        
          try {
-            ad.actualizarAprendiz(av);
+            ad.actualizarAprendiz(av,fv);
             List aprendiz=ad.listarAprendiz();
             req.setAttribute("aprendiz",aprendiz);
             req.getRequestDispatcher("views/listarAprendices.jsp").forward(req, resp);

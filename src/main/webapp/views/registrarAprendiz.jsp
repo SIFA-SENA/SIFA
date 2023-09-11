@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style_gestionFichas.css">
-    <title>Gestion fichas</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-Gestion fichas</title>
 </head>
 <body>
     <!--HEADER-->
@@ -36,50 +37,50 @@
 
   
 
-<h1 class="title" id="crearFicha">REGISTRAR FICHA</h1>
+<h1 class="title" id="crearFicha">APRENDIZ</h1>
 
 <form action="aprendiz" method="POST" class="formularioRgeistro">
 <div class="formularioRgeistro ">
     <div>
         <div class="registrarFicha">
             <form class="registro" method="POST">
-                <h2 id="Ficha">REGISTRAR FICHA! </h2>
+                <h2 id="Ficha">REGISTRAR </h2>
                 
                 <div class="program">
                     <label> Nombre aprendiz </label><p></p>
-                    <input type="text" name="nombreAprendiz" id="nombreAprendiz" >
+                    <input type="text" name="nombreAprendiz" id="nombreAprendiz" required>
                 </div>
                 <div class="area">
                     <label> Tipo documento aprendiz</label><p></p>
-                    <input type="text" name="tipodocAprendiz" id="tipodocAprendiz" >
+                    <input type="text" name="tipodocAprendiz" id="tipodocAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Documento aprendiz</label><p></p>
-                    <input type="text" name="documentoAprendiz" id="documentoAprendiz" >
+                    <input type="text" name="documentoAprendiz" id="documentoAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Celular aprendiz</label><p></p>
-                    <input type="text" name="celularAprendiz" id="celularAprendiz" >
+                    <input type="text" name="celularAprendiz" id="celularAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Correo aprendiz</label><p></p>
-                    <input type="email" name="correoAprendiz" id="correoAprendiz" >
+                    <input type="email" name="correoAprendiz" id="correoAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Fecha nacimiento aprendiz</label><p></p>
-                    <input type="text" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" >
+                    <input type="text" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Estado aprendiz</label><p></p>
-                    <input type="text" name="estadoAprendiz" id="estadoAprendiz" >
+                    <input type="text" name="estadoAprendiz" id="estadoAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Observaciones</label><p></p>
-                    <input type="text" name="observaciones" id="observaciones" >
+                    <input type="text" name="observaciones" id="observaciones" required>
                 </div>
                 <div class="sede">
                     <label> idFicha</label><p></p>
-                    <input type="text" name="idFichaFK" id="idFichaFK" >
+                    <input type="text" name="idFichaFK" id="idFichaFK" required>
                 </div>
                
 

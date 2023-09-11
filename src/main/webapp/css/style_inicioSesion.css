@@ -160,6 +160,9 @@ h3{
     border-radius: 15%;
 }
 
+.usuario input{
+    margin: 25px;
+}
 
 /*FOOTER*/
 .container{
@@ -176,7 +179,7 @@ ul{
 }
 .footer{
 	background-color: white;
-    padding: 70px 0;
+    border: 3px solid #39A900;
 }
 .footer-col{
    width: 25%;

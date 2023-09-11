@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style_gestionFichas.css">
-    <title>Gestion fichas</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-editar ficha</title>
 </head>
 <body>
     <!--HEADER-->
@@ -52,15 +53,15 @@
                     
                     <div class="program">
                         <label> Programa de formación </label><p></p>
-                        <input type="text" name="programaFormacion" id="programaFormacion" value="${ficha.programaFormacion}">
+                        <input type="text" name="programaFormacion" id="programaFormacion" value="${ficha.programaFormacion}" required>
                     </div>
                     <div class="area">
                         <label> Area de formación </label><p></p>
-                        <input type="text" name="areaFormacion" id="areaFormacion" value="${ficha.areaFormacion}">
+                        <input type="text" name="areaFormacion" id="areaFormacion" value="${ficha.areaFormacion}" required>
                     </div>
                     <div class="sede">
                         <label> Lugar Formacion</label><p></p>
-                        <input type="text" name="lugarFormacion" id="lugarFormacion" value="${ficha.lugarFormacion}">
+                        <input type="text" name="lugarFormacion" id="lugarFormacion" value="${ficha.lugarFormacion}" required>
                     </div>
                     
                     <div class="Estado">

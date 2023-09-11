@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style_gestionFichas.css">
-    <title>Gestion fichas</title>
+    <link rel="shortcut icon" href="img/logo_sena.jpeg">
+    <title>SIFA-editar aprendiz</title>
 </head>
 <body>
     <!--HEADER-->
@@ -19,7 +20,7 @@
         </div>
         <nav>
             <ul class="title">
-                <h1 class="h1">GESTIONA TU FICHA </h1>
+                <h1 class="h1">GESTION DE APRENDIZ </h1>
             </ul>
         </nav>
     </header>
@@ -47,41 +48,46 @@
                 
                 <div class="program">
                     <label> Nombre aprendiz </label><p></p>
-                    <input type="text" name="nombreAprendiz" id="nombreAprendiz" value="${aprendiz.nombreAprendiz}">
+                    <input type="text" name="nombreAprendiz" id="nombreAprendiz" value="${aprendiz.nombreAprendiz}" required>
                 </div>
                 <div class="area">
                     <label> Tipo documento aprendiz</label><p></p>
-                    <input type="text" name="tipodocAprendiz" id="tipodocAprendiz" value="${aprendiz.tipodocAprendiz}">
+                    <input type="text" name="tipodocAprendiz" id="tipodocAprendiz" value="${aprendiz.tipodocAprendiz}" required>
                 </div>
                 <div class="sede">
                     <label> Documento aprendiz</label><p></p>
-                    <input type="text" name="documentoAprendiz" id="documentoAprendiz" value="${aprendiz.documentoAprendiz}" >
+                    <input type="text" name="documentoAprendiz" id="documentoAprendiz" value="${aprendiz.documentoAprendiz}" required>
                 </div>
                 <div class="sede">
                     <label> Celular aprendiz</label><p></p>
-                    <input type="text" name="celularAprendiz" id="celularAprendiz" value="${aprendiz.celularAprendiz}">
+                    <input type="text" name="celularAprendiz" id="celularAprendiz" value="${aprendiz.celularAprendiz}" required>
                 </div>
                 <div class="sede">
                     <label> Correo aprendiz</label><p></p>
-                    <input type="email" name="correoAprendiz" id="correoAprendiz" value="${aprendiz.correoAprendiz}" >
+                    <input type="email" name="correoAprendiz" id="correoAprendiz" value="${aprendiz.correoAprendiz}" required>
                 </div>
                 <div class="sede">
                     <label> Fecha nacimiento aprendiz</label><p></p>
-                    <input type="text" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" value="${aprendiz.fechaNacimientoAprendiz}" >
+                    <input type="text" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" value="${aprendiz.fechaNacimientoAprendiz}" required>
                 </div>
                 <div class="sede">
                     <label> Estado aprendiz</label><p></p>
-                    <input type="text" name="estadoAprendiz" id="estadoAprendiz" value="${aprendiz.estadoAprendiz}" >
+                    <input type="text" name="estadoAprendiz" id="estadoAprendiz" value="${aprendiz.estadoAprendiz}" required>
                 </div>
+                
                 <div class="sede">
                     <label> Observaciones</label><p></p>
-                    <input type="text" name="observaciones" id="observaciones" value="${aprendiz.observaciones}" >
+                    <input type="text" name="observaciones" id="observaciones"  value="${aprendiz.observaciones}" required>
                 </div>
+    
                 <div class="sede">
                     <label> idFicha</label><p></p>
-                    <input type="text" name="idFichaFK" id="idFichaFK" value="${aprendiz.idFichaFK}" >
-                </div>
+                    
+                    <input type="text" name="idFicha" id="idFicha" value="${aprendiz.getFichaVo().getIdFicha()}" required>
                
+                </div>
+        
+            
 
             <input type="submit" name="accion" value="actualizarAprendiz">
         </div>

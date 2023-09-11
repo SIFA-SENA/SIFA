@@ -84,28 +84,34 @@
 
 .wrapper{
     margin: 100px;
-    width: 90%;
+    width: 80%;
     text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 .wrapper video{
-    max-width: 900px;
-    float: right;
+    max-width: 100%;
+    float: left;
     border: 3px solid #39A900;
     border-radius: 10px;
-    margin-left: 15px;
+    margin-right: 15px;
+    margin-left: 5PX;
     
 }
 
 .wrapper .text{
     margin: 20px;
     padding-top: 20px;
+    max-width: 100%;
+    text-align: center;
 }
 .gente{
-    max-width: 500px;
+    max-width: 100%;
     float: right;
     border: 3px solid #39A900;
     border-radius: 10px;
     margin-left: 15px;
+    margin-right: 5PX;
 }
 
 .text-box{
@@ -114,46 +120,53 @@
 }
 
 .text-box h2 {
-    font-size: 80px;
+    font-size: 40px;
     padding-top: 20px;
+    text-align: center;
 }
 
 .text-box p{
-    font-size: 30px;
+    font-size: 15px;
     padding-top: 20px;
+    text-align: center;
 }
 
 /*TEXTO 2*/
 
 .wrapper2 {
-    margin: 50px;
-    width: 90%;
-    margin-top: 280px;
+    margin: 100px;
+    width: 80%;
     text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 
 .gente2{
-    max-width: 900px;
-    float: left;
+    max-width: 80%;
+    float: right;
     border: 3px solid #39A900;
     border-radius: 10px;
     margin-right: 15px;
+
 }
 
 .text-box2{
     color: rgb(0, 0, 0);
     padding-top: 20px;
+    max-width: 100%;
 }
 
 .text-box2 h2 {
-    font-size: 80px;
+    font-size: 40px;
     padding-top: 20px;
+    text-align: center;
 }
 
 .text-box2 p{
-    font-size: 30px;
+    font-size: 15px;
     padding-top: 20px;
+    text-align: center;
 }
 
 /*MENSAJE DE INCIO*/
@@ -184,7 +197,7 @@ ul{
 .footer{
 	background-color: white;
     border: 3px solid #39A900;
-    margin-top: 500px;
+    
 .footer-col{
    width: 25%;
    padding: 0 15px;
