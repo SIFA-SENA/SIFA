@@ -142,5 +142,73 @@ public int actualizarAprendiz(AprendizVo apr,FichaVo fic) throws SQLException{
     }
     return r;
 }
+//---------------------------- LISTAR APRENDIZ POR FICHA -----------------------------------
+/* public AprendizVo listarApr(int idF){
+    AprendizVo aprendiz=new AprendizVo();
+    FichaVo fic=new FichaVo();
+    String  sql="SELECT A.idAprendiz,A.nombreAprendiz,A.tipodocAprendiz,A.documentoAprendiz,A.celularAprendiz,A.correoAprendiz,A.fechaNacimientoAprendiz,A.estadoAprendiz,A.observaciones,F.idFicha from Aprendiz A INNER JOIN Ficha F ON A.idFichaFK="+idF;
 
+
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+        rs=ps.executeQuery(sql);
+        while (rs.next()) {
+            aprendiz.setIdAprendiz(rs.getInt(1));
+            aprendiz.setNombreAprendiz(rs.getString(2));
+            aprendiz.setTipodocAprendiz(rs.getString(3));
+            aprendiz.setDocumentoAprendiz(rs.getInt(4));
+            aprendiz.setCelularAprendiz(rs.getInt(5));
+            aprendiz.setCorreoAprendiz(rs.getString(6));
+            aprendiz.setFechaNacimientoAprendiz(rs.getString(7));
+            aprendiz.setEstadoAprendiz(rs.getString(8));
+            aprendiz.setObservaciones(rs.getString(9));
+            fic.setIdFicha(rs.getInt(10));
+            
+        }
+    } catch (Exception e) {
+
+         System.out.println("Error en listar por id "+e.getMessage().toString());
+        
+    }
+    return aprendiz;
+} */
+
+public List<AprendizVo> listarAprendiz(int idF) throws SQLException{
+    List<AprendizVo> aprendiz=new ArrayList<>();
+    sql="SELECT A.idAprendiz,A.nombreAprendiz,A.tipodocAprendiz,A.documentoAprendiz,A.celularAprendiz,A.correoAprendiz,A.fechaNacimientoAprendiz,A.estadoAprendiz,A.observaciones from Aprendiz A  where A.idFichaFK="+idF;
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+        rs=ps.executeQuery(sql);
+        while(rs.next()){
+            AprendizVo r= new AprendizVo();
+            
+            //Escribir  en el setter cada valor encontrado
+            r.setIdAprendiz(rs.getInt("idAprendiz"));
+            r.setNombreAprendiz(rs.getString("nombreAprendiz"));
+            r.setTipodocAprendiz(rs.getString("tipodocAprendiz"));
+            r.setDocumentoAprendiz(rs.getInt("documentoAprendiz"));
+            r.setCelularAprendiz(rs.getInt("celularAprendiz"));
+            r.setCorreoAprendiz(rs.getString("correoAprendiz"));
+            r.setFechaNacimientoAprendiz(rs.getString("fechaNacimientoAprendiz"));
+            r.setEstadoAprendiz(rs.getString("estadoAprendiz"));
+            r.setObservaciones(rs.getString("observaciones"));
+       
+          
+        
+            aprendiz.add(r);
+     
+        }
+        ps.close();
+        System.out.println("consulta exitosa");
+    } catch (Exception e) {
+        System.out.println("La consulta no pudo ser ejecutado "+e.getMessage().toString());
+    }
+    finally{
+        
+        con.close();
+    }
+    return aprendiz;
+}
 }

@@ -28,12 +28,14 @@
 
     <header class="navegation">
         <div class="options">
-            <h4><a href="#">Ayuda y Soporte</a></h4>
-            <h4><a href="#Administrador">Administrador</a></h4>
-            <h4><a href="#Instructor">Instructor</a></h4>
+            <h4><a href="ficha?accion=listar">Consultar Ficha</a></h4>
+            <h4><a href="ficha?accion=abrirForm">Registrar Ficha</a></h4>
+            <h4><a href="usuario?accion=consultar">Consultar Usuarios</a></h4>
+            <h4><a href="aprendiz?accion=FormRegistrarA">Registrar Aprendiz</a></h4>
+          
         </div>
             <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
-            <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></a>
+            <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></i></a>
     </header>
 
     <section class="home">

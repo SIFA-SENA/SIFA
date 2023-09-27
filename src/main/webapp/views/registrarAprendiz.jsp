@@ -28,8 +28,10 @@
     <header class="navegation">
         <div class="options">
             <h4><a href="ficha?accion=listar">Consultar Ficha</a></h4>
-            <h4><a href="#crearFicha">Crear Ficha</a></h4>
-            <h4><a href="#">Ayuda y Soporte</a></h4>
+            <h4><a href="ficha?accion=abrirForm">Registrar Ficha</a></h4>
+            <h4><a href="usuario?accion=consultar">Consultar Usuarios</a></h4>
+            <h4><a href="aprendiz?accion=FormRegistrarA">Registrar Aprendiz</a></h4>
+          
         </div>
             <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
             <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></i></a>
@@ -68,7 +70,7 @@
                 </div>
                 <div class="sede">
                     <label> Fecha nacimiento aprendiz</label><p></p>
-                    <input type="text" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" required>
+                    <input type="date" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" required>
                 </div>
                 <div class="sede">
                     <label> Estado aprendiz</label><p></p>

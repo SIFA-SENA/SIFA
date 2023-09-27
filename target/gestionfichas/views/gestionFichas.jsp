@@ -33,7 +33,7 @@
             <h4><a href="ficha?accion=abrirForm">Registrar Ficha</a></h4>
             <h4><a href="usuario?accion=consultar">Consultar Usuarios</a></h4>
             <h4><a href="aprendiz?accion=FormRegistrarA">Registrar Aprendiz</a></h4>
-            <h4><a href="aprendiz?accion=listarA">Consultar Aprendiz</a></h4>
+          
         </div>
             <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
             <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></i></a>

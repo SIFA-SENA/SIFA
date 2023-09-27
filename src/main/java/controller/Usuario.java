@@ -123,6 +123,7 @@ public class Usuario extends HttpServlet{
         try {
             ud.registrar(uv);
             System.out.println("Registro insertado correctamente");
+              req.getRequestDispatcher("views/iniciarSesion.jsp").forward(req, resp);
         } catch (Exception e) {
             System.out.println("Error en la inserción del registro "+e.getMessage().toString());
         }

@@ -30,11 +30,12 @@
 
     <header class="navegation">
         <div class="options">
+            <h4><a href="ficha?accion=listar">Consultar Ficha</a></h4>
             <h4><a href="ficha?accion=abrirForm">Registrar Ficha</a></h4>
-            
-            <h4><a href="#">Ayuda y Soporte</a></h4>
+            <h4><a href="usuario?accion=consultar">Consultar Usuarios</a></h4>
+            <h4><a href="aprendiz?accion=FormRegistrarA">Registrar Aprendiz</a></h4>
+          
         </div>
-        <h4><a href="ficha?accion=listar">Atras</a></h4>
             <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
             <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></i></a>
     </header>
@@ -69,8 +70,14 @@
                <td>
                         <a href="ficha?accion=Editar&id=${ficha.getIdFicha()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
                           <i class="fa-solid fa-pen"></i></a>
-                <!-- <button type="submit" class="btn btn-editar"><a href="usuario?accion=editarUsuario&cod=${usuario.getIdUsua()}"></a><i class="fa-solid fa-pen"></i></button> -->
+               
               </td>
+
+              <td>
+                <a href="aprendiz?accion=listarAF&idF=${ficha.getIdFicha()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
+                    <i class="fa-solid fa-person"></i>
+       
+      </td>
               
         </c:forEach> 
        
