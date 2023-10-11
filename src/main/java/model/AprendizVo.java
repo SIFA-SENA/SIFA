@@ -21,6 +21,7 @@ public class AprendizVo {
     }
 
 
+
     public AprendizVo(int idAprendiz, String nombreAprendiz, String tipodocAprendiz, int documentoAprendiz,
             int celularAprendiz, String correoAprendiz, String fechaNacimientoAprendiz, String estadoAprendiz,
             String observaciones, model.FichaVo fichaVo) {
@@ -37,9 +38,11 @@ public class AprendizVo {
     }
 
 
+
     public int getIdAprendiz() {
         return idAprendiz;
     }
+
 
 
     public void setIdAprendiz(int idAprendiz) {
@@ -47,9 +50,11 @@ public class AprendizVo {
     }
 
 
+
     public String getNombreAprendiz() {
         return nombreAprendiz;
     }
+
 
 
     public void setNombreAprendiz(String nombreAprendiz) {
@@ -57,9 +62,11 @@ public class AprendizVo {
     }
 
 
+
     public String getTipodocAprendiz() {
         return tipodocAprendiz;
     }
+
 
 
     public void setTipodocAprendiz(String tipodocAprendiz) {
@@ -67,9 +74,11 @@ public class AprendizVo {
     }
 
 
+
     public int getDocumentoAprendiz() {
         return documentoAprendiz;
     }
+
 
 
     public void setDocumentoAprendiz(int documentoAprendiz) {
@@ -77,9 +86,11 @@ public class AprendizVo {
     }
 
 
+
     public int getCelularAprendiz() {
         return celularAprendiz;
     }
+
 
 
     public void setCelularAprendiz(int celularAprendiz) {
@@ -87,9 +98,11 @@ public class AprendizVo {
     }
 
 
+
     public String getCorreoAprendiz() {
         return correoAprendiz;
     }
+
 
 
     public void setCorreoAprendiz(String correoAprendiz) {
@@ -97,9 +110,11 @@ public class AprendizVo {
     }
 
 
+
     public String getFechaNacimientoAprendiz() {
         return fechaNacimientoAprendiz;
     }
+
 
 
     public void setFechaNacimientoAprendiz(String fechaNacimientoAprendiz) {
@@ -107,9 +122,11 @@ public class AprendizVo {
     }
 
 
+
     public String getEstadoAprendiz() {
         return estadoAprendiz;
     }
+
 
 
     public void setEstadoAprendiz(String estadoAprendiz) {
@@ -117,9 +134,11 @@ public class AprendizVo {
     }
 
 
+
     public String getObservaciones() {
         return observaciones;
     }
+
 
 
     public void setObservaciones(String observaciones) {
@@ -127,15 +146,19 @@ public class AprendizVo {
     }
 
 
+
     public FichaVo getFichaVo() {
         return FichaVo;
     }
+
 
 
     public void setFichaVo(FichaVo fichaVo) {
         FichaVo = fichaVo;
     }
 
+
+    
 
 
     

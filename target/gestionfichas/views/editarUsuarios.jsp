@@ -59,9 +59,14 @@
                         <label for="nombreUsuario">Nombre</label>
                         <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required value="${usuario.nombreUsuario}" > 
                     </div>
-                    <div class="name">
-                        <label for="tipodocUsuario">Tipo documento</label>
-                        <input type="text" name="tipodocUsuario" id="tipodocUsuario" class="form-control" required value="${usuario.tipodocUsuario}">
+                    <div class="sede">
+                        <label> Documento Usuario</label><p></p>
+                        <select name="tipodocUsuario" id="tipodocUsuario" >
+                            <option value="Tarjeta identidad">Tarjeta Identidad</option>
+                            <option value="Cedula Ciudadania">Cedula Ciudadania</option>
+                            <option value="Cedula Extranjeria">Cedula Extranjeria</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
                     </div>
                     <div class="name">
                         <label for="documentoUsuario">Numero Documento</label>

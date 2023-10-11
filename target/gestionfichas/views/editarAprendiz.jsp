@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,11 +53,16 @@
                     <label> Nombre aprendiz </label><p></p>
                     <input type="text" name="nombreAprendiz" id="nombreAprendiz" value="${aprendiz.nombreAprendiz}" required>
                 </div>
-                <div class="area">
-                    <label> Tipo documento aprendiz</label><p></p>
-                    <input type="text" name="tipodocAprendiz" id="tipodocAprendiz" value="${aprendiz.tipodocAprendiz}" required>
-                </div>
                 <div class="sede">
+                    <label> Tipo documento Aprendiz</label><p></p>
+                    <select name="tipodocAprendiz" id="tipodocAprendiz" >
+                        <option value="Tarjeta identidad">Tarjeta Identidad</option>
+                        <option value="Cedula Ciudadania">Cedula Ciudadania</option>
+                        <option value="Cedula Extranjeria">Cedula Extranjeria</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="area">
                     <label> Documento aprendiz</label><p></p>
                     <input type="text" name="documentoAprendiz" id="documentoAprendiz" value="${aprendiz.documentoAprendiz}" required>
                 </div>
@@ -70,27 +76,43 @@
                 </div>
                 <div class="sede">
                     <label> Fecha nacimiento aprendiz</label><p></p>
-                    <input type="text" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" value="${aprendiz.fechaNacimientoAprendiz}" required>
+                    <input type="date" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" value="${aprendiz.fechaNacimientoAprendiz}" required>
                 </div>
                 <div class="sede">
-                    <label> Estado aprendiz</label><p></p>
-                    <input type="text" name="estadoAprendiz" id="estadoAprendiz" value="${aprendiz.estadoAprendiz}" required>
+                    <label> Estado Aprendiz</label><p></p>
+                    <select name="estadoAprendiz" id="estadoAprendiz" >
+                        <option value="En formacion">En formacion</option>
+                        <option value="Deserción">Deserción</option>
+                        <option value="Formación finalizada">Formación finalizada</option>
+                        <option value="Aplazamiento">Aplazamiento</option>
+                    </select>
                 </div>
                 
                 <div class="sede">
                     <label> Observaciones</label><p></p>
-                    <input type="text" name="observaciones" id="observaciones"  value="${aprendiz.observaciones}" required>
+                    <input type="text" name="observaciones" id="observaciones"  value="${aprendiz.observaciones}" >
                 </div>
     
                 <div class="sede">
-                    <label> idFicha</label><p></p>
-                    
-                    <input type="text" name="idFicha" id="idFicha" value="${aprendiz.getFichaVo().getIdFicha()}" >
-               
+                    <label> Id Ficha</label><p></p>
+                    <select name="idFichaFK" id="idFichaFK" >
+                        <option value="2687386">2687386</option>
+                        <option value="2687345">2687345</option>
+                    </select>
                 </div>
+                
+                
+                  
+
+             
         
             
 
             <input type="submit" name="accion" value="actualizarAprendiz">
         </div>
     </form>
+</div>
+</div>
+</div>
+</body>
+</html>

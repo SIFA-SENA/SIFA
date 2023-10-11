@@ -276,6 +276,22 @@ ul{
 }
 }
 
+.boton{
+	display: block;
+	width: 160px;
+	font-family: cursive;
+	font-weight: 700;
+	background-color: #39A900;
+	border-radius: 3px;
+	padding: 15px 30px;
+	margin: 50px 165px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+.boton:hover{
+	background-color:#F38D76;
+}
 
 
 

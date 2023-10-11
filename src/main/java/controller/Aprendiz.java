@@ -1,7 +1,7 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.Date;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.FichaDao;
 import model.FichaVo;
-import model.UsuarioVo;
 import model.AprendizDao;
 import model.AprendizVo;
 
@@ -150,7 +149,7 @@ int ida;
     }
 }
 
-//--------------------------------------------EDITAR FICHA ----------------------------------------------
+//--------------------------------------------EDITAR APRENDIZ ----------------------------------------------
 
   private void actualizarAprendiz(HttpServletRequest req, HttpServletResponse resp) {
 
@@ -179,7 +178,7 @@ int ida;
             ad.actualizarAprendiz(av,fv);
             List aprendiz=ad.listarAprendiz();
             req.setAttribute("aprendiz",aprendiz);
-            req.getRequestDispatcher("views/listarAprendices.jsp").forward(req, resp);
+            req.getRequestDispatcher("views/listarxficha.jsp").forward(req, resp);
          } catch (Exception e) {
           
          }

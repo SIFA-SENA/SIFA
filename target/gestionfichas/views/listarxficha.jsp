@@ -41,7 +41,7 @@
     </header>
 
     <!--CARDS-->
-
+    <a class= "boton" href="aprendiz?accion=FormRegistrarA&idF=${ficha.getIdFicha()}">Registrar aprendiz</a>
  
 
 <div class="flex-fill flex-grow-1 ms-3">
@@ -75,12 +75,15 @@
                <td>${aprendiz.getFechaNacimientoAprendiz()}</td> 
                <td>${aprendiz.getEstadoAprendiz()}</td> 
                <td>${aprendiz.getObservaciones()}</td> 
+       
              
                <td>
                         <a href="aprendiz?accion=editarA&id=${aprendiz.getIdAprendiz()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
                           <i class="fa-solid fa-pen"></i></a>
                 <!-- <button type="submit" class="btn btn-editar"><a href="usuario?accion=editarUsuario&cod=${usuario.getIdUsua()}"></a><i class="fa-solid fa-pen"></i></button> -->
               </td>
+             
+              
               
         </c:forEach> 
        

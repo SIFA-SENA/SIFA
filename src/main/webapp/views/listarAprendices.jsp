@@ -42,6 +42,7 @@
 
     <!--CARDS-->
 
+   
  
 
 <div class="flex-fill flex-grow-1 ms-3">
@@ -64,7 +65,8 @@
                    <th colspan="2"><center>Acciones</center></th> 
                </tr>
                
-       <c:forEach var="aprendiz" items="${aprendiz}"  >         
+       <c:forEach var="aprendiz" items="${aprendiz}" >         
+        <a class= "boton" href="aprendiz?accion=FormRegistrarA&idF=${ficha.getIdFicha()}">Registrar aprendiz</a>
                
                <tr>
                <td>${aprendiz.getIdAprendiz()}</td>

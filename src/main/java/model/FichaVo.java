@@ -10,6 +10,19 @@ public class FichaVo {
     public FichaVo() {
     }
 
+    
+
+    public FichaVo(int idFicha, String programaFormacion, String areaFormacion, String lugarFormacion,
+            String estadoFicha) {
+        this.idFicha = idFicha;
+        this.programaFormacion = programaFormacion;
+        this.areaFormacion = areaFormacion;
+        this.lugarFormacion = lugarFormacion;
+        this.estadoFicha = estadoFicha;
+    }
+
+
+
     public int getIdFicha() {
         return idFicha;
     }

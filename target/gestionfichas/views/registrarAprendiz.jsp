@@ -52,11 +52,17 @@
                     <label> Nombre aprendiz </label><p></p>
                     <input type="text" name="nombreAprendiz" id="nombreAprendiz" required>
                 </div>
-                <div class="area">
-                    <label> Tipo documento aprendiz</label><p></p>
-                    <input type="text" name="tipodocAprendiz" id="tipodocAprendiz" required>
-                </div>
+              
                 <div class="sede">
+                    <label> Tipo documento Aprendiz</label><p></p>
+                    <select name="tipodocAprendiz" id="tipodocAprendiz" >
+                        <option value="Tarjeta identidad">Tarjeta Identidad</option>
+                        <option value="Cedula Ciudadania">Cedula Ciudadania</option>
+                        <option value="Cedula Extranjeria">Cedula Extranjeria</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="area">
                     <label> Documento aprendiz</label><p></p>
                     <input type="text" name="documentoAprendiz" id="documentoAprendiz" required>
                 </div>
@@ -73,16 +79,24 @@
                     <input type="date" name="fechaNacimientoAprendiz" id="fechaNacimientoAprendiz" required>
                 </div>
                 <div class="sede">
-                    <label> Estado aprendiz</label><p></p>
-                    <input type="text" name="estadoAprendiz" id="estadoAprendiz" required>
+                    <label> Estado Aprendiz</label><p></p>
+                    <select name="estadoAprendiz" id="estadoAprendiz" >
+                        <option value="En formacion">En formacion</option>
+                        <option value="Deserción">Deserción</option>
+                        <option value="Formación finalizada">Formación finalizada</option>
+                        <option value="Aplazamiento">Aplazamiento</option>
+                    </select>
                 </div>
                 <div class="sede">
                     <label> Observaciones</label><p></p>
                     <input type="text" name="observaciones" id="observaciones" required>
                 </div>
                 <div class="sede">
-                    <label> idFicha</label><p></p>
-                    <input type="text" name="idFichaFK" id="idFichaFK" required>
+                    <label> Id Ficha</label><p></p>
+                    <select name="idFichaFK" id="idFichaFK" >
+                        <option value="2687386">2687386</option>
+                        <option value="2687345">2687345</option>
+                    </select>
                 </div>
                
 
