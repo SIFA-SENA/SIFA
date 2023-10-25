@@ -7,9 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../img/logo_sena.jpg" />
+    <link rel="shortcut icon" href="img/logo_sena.jpg" />
     <title>Registrarse-SIFA</title>
 </head>
 <body>
@@ -20,25 +20,25 @@
             
           </span>
         </button>
-        <img class="navegacion1" src="../img/logo_sena.jpg" width="80px" height="80px">
+        <img class="navegacion1" src="img/logo_sena.jpg" width="80px" height="80px">
         <a class="navbar-brand navegacion2" href="index.jsp">SIFA</a>
       
         <div class="collapse navbar-collapse navegacion" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             <li>
-              <a class="nav-link" href="../views/iniciarSesion.jsp">Login</a>
+              <a class="nav-link" href="usuario?accion=abrirFormLogin">Login</a>
           </li>
           
           <li>
-              <img class="imgn" src="../img/usuario.png" width="17px" height="17px">
+              <img class="imgn" src="img/usuario.png" width="17px" height="17px">
           </li>
           
             <li>
-              <a class="nav-link" href="../index.jsp">Inicio</a>
+              <a class="nav-link" href="index.jsp">Inicio</a>
           </li>
             <li>
-              <a href="../index.jsp"><img class="navegacion1" src="../img/hogar.png" width="20px" height="20px" ></a>
+              <a href="index.jsp"><img class="navegacion1" src="img/hogar.png" width="20px" height="20px" ></a>
             </li>
 
             
@@ -100,7 +100,7 @@
     
                 
                 <p></p>
-                <input type="submit" class="btn btn-primary boton" value="registrar"></input>
+                <input type="submit" class="btn btn-primary boton" name="accion" value="registrar"></input>
     
                 <p></p>
     
