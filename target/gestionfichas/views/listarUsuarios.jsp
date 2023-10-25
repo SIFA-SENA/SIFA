@@ -56,6 +56,7 @@
                 <th>Tipo Documento</th> 
                 <th>No Identificación</th>            
                 <th>Celular</th>
+                <th>Usuario</th>
                 <th>Correo</th>
                 <th>Clave</th>
                 <th>Cargo</th>   
@@ -71,6 +72,7 @@
                         <td>${usuario.getTipodocUsuario()}</td>
                         <td>${usuario.getDocumentoUsuario()}</td>
                         <td>${usuario.getCelularUsuario()}</td>
+                        <td>${usuario.getUsuario()}</td>
                         <td>${usuario.getCorreo()}</td>
                         <td>${usuario.getClave()}</td>
                         <td>${usuario.getRol()}</td>

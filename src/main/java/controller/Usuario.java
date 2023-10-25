@@ -112,6 +112,9 @@ public class Usuario extends HttpServlet{
         if(req.getParameter("rol")!=null){
             uv.setRol(req.getParameter("rol"));
         }
+          if(req.getParameter("usuario")!=null){
+            uv.setUsuario(req.getParameter("usuario"));
+        }
     
         if(req.getParameter("correo")!=null){
             uv.setCorreo(req.getParameter("correo"));
@@ -162,15 +165,15 @@ private void iniciarSesionl(HttpServletRequest req, HttpServletResponse resp) th
         String accion = req.getParameter("accion");
 
             if (accion.equals("iniciarSesionl")) {
-                String nombreUsuario = req.getParameter("nombreUsuario");
+                String usuario = req.getParameter("usuario");
                 String clave = req.getParameter("clave");
-                uv.setNombreUsuario(nombreUsuario);
+                uv.setUsuario(usuario);
                 uv.setClave(clave);
 
             r = ud.validar(uv);
             
             if (r == 1) {
-                req.getSession().setAttribute("nombreUsuario", nombreUsuario);
+                req.getSession().setAttribute("usuario", usuario);
                 req.getSession().setAttribute("clave", clave);
                 System.out.println("Ingresaste al sistema");
                  req.getRequestDispatcher("views/gestionFichas.jsp").forward(req, resp);
@@ -199,7 +202,7 @@ int idu;
     }
 }
 
-//--------------------------------------------EDITAR FICHA ----------------------------------------------
+//--------------------------------------------EDITAR USUARIO----------------------------------------------
 
   private void actualizarUsuarios(HttpServletRequest req, HttpServletResponse resp) {
 
@@ -208,6 +211,7 @@ int idu;
         int documentoUsuario=Integer.parseInt(req.getParameter("documentoUsuario"));
         int celularUsuario=Integer.parseInt(req.getParameter("celularUsuario"));
         String rol=req.getParameter("rol");
+        String usua=req.getParameter("usuario");
         String correo=req.getParameter("correo");
         String clave=req.getParameter("clave");
 
@@ -216,6 +220,7 @@ int idu;
         uv.setDocumentoUsuario(documentoUsuario);
         uv.setCelularUsuario(celularUsuario);
         uv.setRol(rol);
+        uv.setUsuario(usua);
         uv.setCorreo(correo);
         uv.setClave(clave);
         uv.setIdUsuario(idu);

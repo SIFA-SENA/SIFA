@@ -85,6 +85,12 @@
                             <option value="Instructor">Instructor</option>   
                         </select>
                     </div>
+
+                    <div class="name">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" name="usuario" id="usuario" class="form-control" required value="${usuario.usuario}">
+                    </div>
+                
                 
                     <div class="name">
                         <label for="correo">Correo</label>

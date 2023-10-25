@@ -1,6 +1,5 @@
 package model;
-import java.sql.Date;
-import model.FichaVo;
+
 
 public class AprendizVo {
     private int idAprendiz;

@@ -6,98 +6,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/c628e42b8b.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style_index.css">
-    <link rel="shortcut icon" href="img/logo_sena.jpeg">
-
-    <title>SIFA-Portal de gestion de fichas</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/logo_sena.jpg" />
+    <link rel="" href="">
+    <title>SIFA</title>
 </head>
 <body>
-    <header class="header1">
-        <div class="logo">
-            <img src="img/logo_sena.jpeg" width="80px">
+    <nav class="navbar navbar-expand-lg navbar-light  naveg" id="INI">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <img class="navegacion1" src="img/logo_sena.jpg" width="50px" height="50px">
+        <a class="navbar-brand navegacion2" href="index.jsp">SIFA</a>
+      
+        <div class="collapse navbar-collapse navegacion" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            
+            <li>
+              <a class="nav-link" href="views/iniciarSesion.jsp">Login</a>
+          </li>
+          
+          <li>
+              <img class="imgn" src="img/usuario.png" width="20px" height="20px">
+          </li>
+          <li>
+            <a class="nav-link" href="views/registrarse.jsp">Registrar</a>
+          </li>
+          <li>
+          <a href="views/registrarse.jsp"><img class="navegacion1" src="img/agregar-usuario.png" width="20px" height="20px" ></a>
+          </li>
+          </ul>
         </div>
-        <nav>
-            <ul class="title">
-                <h1 class="h1">SIFA</h1>
-            </ul>
-        </nav>
-    </header>
+      </nav>
 
-    <header class="navegation">
-        <div class="options">
-            <h4 ><a href="#">Informacion</a></h4>
-            <h4><a href="#">Ayuda y Soporte</a></h4>
+      
+
+
+      <section>
+        <div id="content">
+          <h2>Bienvenido</h2>
+          <p>Este es un ejemplo de una página de inicio sencilla en blanco y negro
+          Aquí puedes agregar tu contenido y personalizar según tus necesidades
+          Placeholder: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          
         </div>
-            <h4 class="ingresar"><a href="usuario?accion=abrirFormLogin">Ingresar</a></h4>
-            <h4 class="ingresar"><a href="usuario?accion=abrirForm">Registrarse</a></h4>
-            <a href="iniciarSesion.jsp"><i class="fa-regular fa-user"></i></a>
-    </header>
-    
+      </section>
 
-    <diV class="wrapper">
-        <video class="video-slide active" src="img/SENA, el lugar de las oportunidades (videoclip).mp4" autoplay muted loop></video>
-        <div class="text-box">
-            <h2>Bienvenido</h2>
-            <p class="text">Gestiona tu ficha, aqui podras 
-                observar las listas de tus fichas preferidas, 
-                podras interactuar con ellas y mas.
-            Trata de un sistema de gestion de fichas y aprendices para manejar la información mas facil y practica desde una vista mas sencilla, con el buscamos agilizar procesos y mas. </p>
-        </div>
-    </diV>
-
-
-    <diV class="wrapper2">
-        
-        <div class="text-box2">
-            <h2>Quienes lo pueden usar</h2>
-            <p class="text">
-                Este sistema de informacion esta echo para organizar mas facilmente, las listas de aprendices y su asistencia a la fomacion brindada.
-                Sera utilizados por instructores permitidos y administradores que necesiten de la información anterior 
-            </p>
-        </div>
-        <img class="gente2" src="img/gente.jpeg" alt="">
-    </diV>
+      
+      
 
 
 
-    <!--FOOTER-->
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Otras plataformas</h4>
-                    <ul>
-                        <li><a href="https://oferta.senasofiaplus.edu.co/">Sena Sofia Plus</a></li>
-                        <li><a href="https://sena.territorio.la/cms/index.php">Territorium</a></li>
-                        <li><a href="https://www.sena.edu.co/es-co/Paginas/default.aspx">Sena y noticias</a></li>
-                        <li><a href="#">Politica de privacidad</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Necesitas ayuda?</h4>
-                    <ul>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Guia</a></li>
-                        <li><a href="#">Desarrolladores</a></li>
-                    </ul>
-                </div>
 
-                <div class="footer-col">
-                    <h4>Siguenos</h4>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/SENA?locale=es_LA"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/SENAComunica?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/senacomunica/?hl=es-la"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </footer>
+    <!--footer-->
+    <footer class="py-3 ">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
+          <li class="nav-item"><a href="#INI" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/" class="nav-link px-2 text-body-secondary">Sena Sofia Plus</a></li>
+          <li class="nav-item"><a href="https://sena.territorio.la/index.php?login=true" class="nav-link px-2 text-body-secondary">Territorium</a></li>
+          <li class="nav-item"><a href="https://web.facebook.com/SENA/?locale=es_LA&_rdc=1&_rdr" class="nav-link px-2 text-body-secondary">Facebook</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"></a></li>
+        </ul>
+        <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+      </footer>
+</body>
+</html>
+
 </body>
 </html>

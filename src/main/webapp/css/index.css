@@ -1,0 +1,144 @@
+body{
+    background-color: #ececec !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.navegacion{
+    font-size: large;
+    margin-left: 70%;
+}
+
+.navegacion1{
+    font-size: large;
+    margin-top: 10px !important;
+    margin-left: 15px !important;
+}
+
+.navegacion2{
+    margin-left: 2% !important;
+    font-size: 45px !important;
+}
+
+.imgn{
+    margin-top: 10px;
+    margin-left: 1px;
+}
+
+.naveg{
+    background-color: rgb(255, 255, 255) !important;
+}
+
+/*CONTENIDO INICIAL*/
+/*TEXTO INCIAL*/
+
+.wrapper{
+    margin: 100px;
+    width: 90%;
+    text-align: center;
+}
+.wrapper video{
+    max-width: 900px;
+    float: right;
+    border: 3px solid #39A900;
+    border-radius: 10px;
+    margin-left: 15px;
+    
+}
+
+.wrapper .text{
+    margin: 20px;
+    padding-top: 20px;
+}
+.gente{
+    max-width: 500px;
+    float: right;
+    border: 3px solid #39A900;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.text-box{
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+}
+
+.text-box h2 {
+    font-size: 80px;
+    padding-top: 20px;
+}
+
+.text-box p{
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+/*TEXTO 2*/
+
+.wrapper2 {
+    margin: 50px;
+    width: 90%;
+    text-align: center;
+}
+
+
+.gente2{
+    max-width: 900px;
+    float: left;
+    border: 3px solid #39A900;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.text-box2{
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+}
+
+.text-box2 h2 {
+    font-size: 80px;
+    padding-top: 20px;
+}
+
+.text-box2 p{
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+/*MENSAJE DE INCIO*/
+
+.mensaje_inicio{
+    margin: 50px;
+    width: 90%;
+    margin-top: 450px;
+    font-size: 60px;
+    text-align: center;
+}
+
+
+
+#content {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin: 10%;
+    margin-top: 10px;
+  }
+
+.image{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-top: 1%;
+    align-content: center;
+}
+
+
+
+/*FOOTER*/
+footer{
+    background-color: white;
+    padding-bottom: 1% !important;
+}

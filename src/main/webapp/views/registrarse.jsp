@@ -1,144 +1,131 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/c628e42b8b.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"  href="css/style_registrar.css">
-    <link rel="shortcut icon" href="img/logo_sena.jpeg">
-    <title>SIFA-Registro</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../img/logo_sena.jpg" />
+    <title>Registrarse-SIFA</title>
 </head>
 <body>
-    <header class="header1">
-        <div class="logo">
-            <img src="img/logo_sena.jpeg" width="80px">
-        </div>
-        <nav>
-            <ul class="title">
-                <h1 class="h1">GESTIONA TU FICHA - REGISTRATE </h1>
-            </ul>
-        </nav>
-    </header>
-
-    <header class="navegation">
-        <div class="options">
-            <h4><a href="#">Ayuda y Soporte</a></h4>
-            <h4><a href="#Administrador">Administrador</a></h4>
-            <h4><a href="#Instructor">Instructor</a></h4>
-        </div>
-            <h4 class="ingresar"><a href="index.jsp">Salir</a></h4>
-            <a href="index.jsp"><i class="fa-solid fa-right-to-bracket"></i></a>
-    </header>
-
-    <section class="home">
-
-        <video class="video-slide active" src="img/Video clip SENA.mp4" autoplay muted loop></video>
-
-        <div class="content active">
-            <h1>Aqui puedes registrarte <br><span>SENA</span></h1>
-            <p>La parte mas fundamental para nosotros es que hagas parte de nuestra familia, gracias por estar con nosotros.</p>
-            <a href="#Administrador">Registrarte</a>
-        </div>
     
-    </section>
-    <form action="usuario" method="POST" class="formularioRgeistro">
-    <div class="formularioRgeistro ">
-    
-            <div class="registrarAdmin">
-                <form class="" method="POST">
-                    <h2 id="Administrador">REGISTRAR USUARIO! </h2>
-                    <div class="name">
-                        <label for="nombreUsuario">Nombre</label>
-                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required>
-                    </div>
-                    <div class="sede">
-                        <label> Tipo Documento </label>
-                        <select name="tipodocUsuario" id="tipodocUsuario" >
-                            <option value="Tarjeta Identidad">Tarjeta Identidad</option>
-                            <option value="Cedula Ciudadania">Cedula Ciudadania</option>
-                            <option value="Cedula Extranjeria">Cedula Extranjeria</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
-                    </div>
-                    <div class="name">
-                        <label for="documentoUsuario">Numero Documento</label>
-                        <input type="text" name="documentoUsuario" id="documentoUsuario" class="form-control" required>
-                    </div>
-                
-                    <div class="name">
-                        <label for="celularUsuario">Numero Celular</label>
-                        <input type="text" name="celularUsuario" id="celularUsuario" class="form-control" required>
-                    </div>
-                
-                    <div class="name">
-                        <label> Rol-Cargo</label><p></p>
-                        <select name="rol" id="rol" >
-                            <option value="#">Seleccionar</option>
-                            <option value="Administrador">Administrador</option>
-                            <option value="Instructor">Instructor</option>   
-                        </select>
-                    </div>
-                
-                    <div class="name">
-                        <label for="correo">Correo</label>
-                        <input type="email" name="correo" id="correo" class="form-control" required>
-                    </div>
-                
-                    <div class="name">
-                        <label for="clave">Contraseña</label>
-                        <input type="password" name="clave" id="clave" class="form-control" required>
-                    </div>
-                
-                    <div>
-                        <button type="submit"  name="accion" value="registrar">Registrar</button>
-                    </div>
-    
-               
-            </div>
-        </div>
-</form>
-   
+    <nav class="navbar navbar-expand-lg navbar-light  naveg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> 
+            
+          </span>
+        </button>
+        <img class="navegacion1" src="../img/logo_sena.jpg" width="80px" height="80px">
+        <a class="navbar-brand navegacion2" href="index.jsp">SIFA</a>
+      
+        <div class="collapse navbar-collapse navegacion" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-           <!--FOOTER-->
-           
-           <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>Otras plataformas</h4>
-                        <ul>
-                            <li><a href="https://oferta.senasofiaplus.edu.co/">Sena Sofia Plus</a></li>
-                            <li><a href="https://sena.territorio.la/cms/index.php">Territorium</a></li>
-                            <li><a href="https://www.sena.edu.co/es-co/Paginas/default.aspx">Sena y noticias</a></li>
-                            <li><a href="#">Politica de privacidad</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Necesitas ayuda?</h4>
-                        <ul>
-                            <li><a href="#">Preguntas frecuentes</a></li>
-                            <li><a href="#">Guia</a></li>
-                            <li><a href="#">Desarrolladores</a></li>
-                        </ul>
-                    </div>
+            <li>
+              <a class="nav-link" href="../views/iniciarSesion.jsp">Login</a>
+          </li>
+          
+          <li>
+              <img class="imgn" src="../img/usuario.png" width="17px" height="17px">
+          </li>
+          
+            <li>
+              <a class="nav-link" href="../index.jsp">Inicio</a>
+          </li>
+            <li>
+              <a href="../index.jsp"><img class="navegacion1" src="../img/hogar.png" width="20px" height="20px" ></a>
+            </li>
+
+            
+            
+          </ul>
+        </div>
+      </nav>
+
+    <div class="row">
+    <div class="col-sm"></div>
+
+
+    <div class="col-sm form">
+    <div class="card ">
+        <div class="card-header titulo">Registar usuario</div>
+        <div class="card-body">
+
+            <form action="usuario" method="POST" class="container-fluid " >
+
+            
+                <input type="text" class="form-control input" placeholder="Nombre Usuario" name="nombreUsuario" id="nombreUsuario" ></input>
+                
+                <p></p>
     
-                    <div class="footer-col">
-                        <h4>Siguenos</h4>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/SENA?locale=es_LA"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://twitter.com/SENAComunica?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/senacomunica/?hl=es-la"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-       </footer>
+                <select class="form-select form-select-lg mb-3 " aria-label="Large select example" name="tipodocUsuario" id="tipodocUsuario">
+                  <option selected>Tipo de documento</option>
+                  <option value="1">Tarjeta de identidad</option>
+                  <option value="2">Cedula de ciudadania</option>
+                  <option value="3">Cedula de extranjeria</option>
+                  <option value="3">Pasaporte</option>
+                </select>
+
+                <p></p>
+    
+                <input type="number" class="form-control input " placeholder="Numeró de documento" name="documentoUsuario" id="documentoUsuario" ></input>
+                
+                <p></p>
+    
+                <input type="number" class="form-control input" placeholder="Celular Usuario" name="celularUsuario" id="celularUsuario"></input>
+                
+                <p></p>
+    
+                <input type="text" class="form-control input" placeholder="Rol" name="rol" id="rol" ></input>
+                <p></p>
+    
+                <p></p>
+                <input type="text" class="form-control input" placeholder="Usuario" name="usuario" id="usuario" ></input>
+    
+                <p></p>
+    
+                <p></p>
+    
+                <input type="email" class="form-control input" placeholder="Correo" name="correo" id="correo"></input>
+                
+    
+                <p></p>
+                
+                <input type="password" class="form-control input" placeholder="Contraseña" name="clave" id="clave"></input>
+    
+                
+                <p></p>
+                <input type="submit" class="btn btn-primary boton" value="registrar"></input>
+    
+                <p></p>
+    
+                <a class="vinculo" href="registrar.html">Olvido su contraseña?</a>
+    
+        </form>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm"></div>
+    </div>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--footer-->
+    <footer class="py-3 ">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
+        <li class="nav-item"><a href="../vistas/index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/" class="nav-link px-2 text-body-secondary">Sena Sofia Plus</a></li>
+        <li class="nav-item"><a href="https://sena.territorio.la/index.php?login=true" class="nav-link px-2 text-body-secondary">Territorium</a></li>
+        <li class="nav-item"><a href="https://web.facebook.com/SENA/?locale=es_LA&_rdc=1&_rdr" class="nav-link px-2 text-body-secondary">Facebook</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"></a></li>
+      </ul>
+      <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+    </footer>
+
 </body>
 </html>
