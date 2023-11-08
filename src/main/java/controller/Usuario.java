@@ -176,10 +176,10 @@ private void iniciarSesionl(HttpServletRequest req, HttpServletResponse resp) th
                 req.getSession().setAttribute("usuario", usuario);
                 req.getSession().setAttribute("clave", clave);
                 System.out.println("Ingresaste al sistema");
-                 req.getRequestDispatcher("../views/gestionFichas.jsp").forward(req, resp);
+                 req.getRequestDispatcher("views/gestionFichas.jsp").forward(req, resp);
             } else {
                 System.out.println("No se pudo ingresar al sistema");
-                req.getRequestDispatcher("../views/iniciarSesion.jsp").forward(req, resp);
+                req.getRequestDispatcher("views/iniciarSesion.jsp").forward(req, resp);
 
             }
 
@@ -242,5 +242,3 @@ int idu;
 
 }
 
-
-    

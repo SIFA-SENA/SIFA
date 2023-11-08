@@ -169,4 +169,3 @@ public int actualizarUsuario(UsuarioVo usu) throws SQLException{
     return r;
 }
 }
-

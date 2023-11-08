@@ -80,7 +80,7 @@
                <td>
                         <a href="aprendiz?accion=editarA&id=${aprendiz.getIdAprendiz()}" class="btn btn-danger"  data-toggle="tooltip" title="Desactivar" data-original-title="Desactivar">
                           <i class="fa-solid fa-pen"></i></a>
-                <!-- <button type="submit" class="btn btn-editar"><a href="usuario?accion=editarUsuario&cod=${usuario.getIdUsua()}"></a><i class="fa-solid fa-pen"></i></button> -->
+
               </td>
              
               

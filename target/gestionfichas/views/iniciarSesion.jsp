@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/logo_sena.jpg" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <title>LOG IN-SIFA</title>
 </head>
 <body>
@@ -51,26 +52,24 @@
         <div class="card-header titulo">Iniciar Sesion</div>
         <div class="card-body">
 
-    <form class="container-fluid ">
+    <form class="container-fluid " action="usuario" method="post">
 
             
-            <input type="text" class="form-control input" placeholder="Usuario" name="usuario" id="usuario" ></input>
+            <input type="text"  name="usuario" id="usuario" class="form-control input" placeholder="Usuario" required>
             
-            
-           
             <p></p>
-            <input type="password" class="form-control input" placeholder="Contraseña" name="clave" id="clave"></input>
+            <input type="password" name="clave" id="clave" class="form-control input" placeholder="Contraseña" required>
 
             
             <p></p>
-            <input type="submit" class="btn btn-primary boton" name="accion" value="iniciarSesionl" ></input>
+            <input type="submit" class="btn btn-primary boton" name="accion" value="iniciarSesionl" >
 
             <p></p>
 
-            <a class="vinculo" href="recuperar.html">Olvido su contraseña?</a>
+            <!-- <a class="vinculo" href="recuperar.html">Olvido su contraseña?</a>
 
             <a class="nav-link" href="../vistas/gestionFichas.html">Gestión ficha</a>
-
+ -->
     </form>
         </div>
     </div>
@@ -78,7 +77,6 @@
     <div class="col-sm"></div>
     </div>
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <!--footer-->
     <footer class="py-3 ">
