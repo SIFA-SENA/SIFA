@@ -1,3 +1,4 @@
+/*CUERPO*/
 body{
     background-color: #ececec !important;
     background-size: cover;
@@ -7,7 +8,7 @@ body{
 
 .navegacion{
     font-size: large;
-    margin-left: 70%;
+    margin-left: 65%;
 }
 
 .navegacion1{
@@ -30,10 +31,22 @@ body{
     background-color: rgb(255, 255, 255) !important;
 }
 
+/*BOTON*/
+.boton{
+    margin-left: 5%;
+}
+
+/*TABLA*/
+
 .table{
     margin-top: 30px !important;
-    border-color: #39A900 !important;
+    border: #39A900 1px solid !important;
     padding-bottom: 20px !important;
+}
+
+.tal{
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 a{

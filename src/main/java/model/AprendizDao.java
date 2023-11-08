@@ -182,4 +182,43 @@ public List<AprendizVo> listarAprendiz(int idF) throws SQLException{
     }
     return aprendiz;
 }
+
+//-------------------------------- LISTAR APRENDICES NO ACTIVOS --------------------------
+
+public List<AprendizVo> listarAprendizIna(int idAI) throws SQLException{
+   
+    List<AprendizVo> aprendiz=new ArrayList<>();
+    sql="SELECT A.idAprendiz,A.nombreAprendiz,A.tipodocAprendiz,A.documentoAprendiz,A.celularAprendiz,A.correoAprendiz,A.fechaNacimientoAprendiz,A.estadoAprendiz,A.observaciones from Aprendiz A  where A.idFichaFK="+idAI+ "and A.estadoAprendiz!="+"En formacion";
+    try {
+        con=Conexion.conectar();
+        ps=con.prepareStatement(sql);
+        rs=ps.executeQuery(sql);
+        while(rs.next()){
+            AprendizVo r= new AprendizVo();
+            
+            //Escribir  en el setter cada valor encontrado
+            r.setIdAprendiz(rs.getInt("idAprendiz"));
+            r.setNombreAprendiz(rs.getString("nombreAprendiz"));
+            r.setTipodocAprendiz(rs.getString("tipodocAprendiz"));
+            r.setDocumentoAprendiz(rs.getInt("documentoAprendiz"));
+            r.setCelularAprendiz(rs.getInt("celularAprendiz"));
+            r.setCorreoAprendiz(rs.getString("correoAprendiz"));
+            r.setFechaNacimientoAprendiz(rs.getString("fechaNacimientoAprendiz"));
+            r.setEstadoAprendiz(rs.getString("estadoAprendiz"));
+            r.setObservaciones(rs.getString("observaciones"));
+       
+            aprendiz.add(r);
+     
+        }
+        ps.close();
+        System.out.println("consulta exitosa");
+    } catch (Exception e) {
+        System.out.println("La consulta no pudo ser ejecutado "+e.getMessage().toString());
+    }
+    finally{
+        
+        con.close();
+    }
+    return aprendiz;
+}
 }

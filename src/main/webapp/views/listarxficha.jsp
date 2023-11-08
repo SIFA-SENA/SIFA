@@ -42,6 +42,7 @@
 
     <!--CARDS-->
     <a class= "boton" href="aprendiz?accion=FormRegistrarA&idF=${ficha.getIdFicha()}">Registrar aprendiz</a>
+    <a class= "boton"  href="aprendiz?accion=listarAI&idAI=${ficha.getIdFicha()}">Aprendices inactivos</a>
  
 
 <div class="flex-fill flex-grow-1 ms-3">

@@ -45,6 +45,9 @@ public class Aprendiz extends HttpServlet {
              case "listarAF":
             listarAprendizF(req,resp);
             break;
+            case "listarAI":
+            listarAprendizNA(req,resp);
+            break;
     
             }
 
@@ -203,5 +206,20 @@ int idaf;
     }
 }
 
-
+//---------------- ABRIR LISTAR APRENDICES NO ACTIVOS --------------------
+int aprI;
+ private void listarAprendizNA(HttpServletRequest req, HttpServletResponse resp) {
+    
+      aprI=Integer.parseInt(req.getParameter("idF"));
+       
+          try {
+             List aprendiz=ad.listarAprendizIna(aprI);
+        
+            req.setAttribute("aprendiz",aprendiz);
+             req.getRequestDispatcher("views/listarxficha1.jsp").forward(req, resp);
+            System.out.println("Datos listados correctamente");
+        } catch (Exception e) {
+            System.out.println("Hay problemas al listar los datos"+e.getMessage().toString());
+    }
+}
 }
