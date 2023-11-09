@@ -38,7 +38,7 @@
       </nav>    
 
       <CENTER><h1 style="margin-top: 2%; font-size: 60px; color: green;">GESTIÓN DE FICHAS!</h1></CENTER>
-      <a href="views/gestionFichas.jsp" class="btn btn-success btn-lg active boton" role="button" aria-pressed="true">Registrar Ficha</a>
+      <a href="ficha?accion=abrirForm" class="btn btn-success btn-lg active boton" role="button" aria-pressed="true">Registrar Ficha</a>
 
       <div class="row" >
         <div class="col-sm tal" >
@@ -62,11 +62,12 @@
                 <td>${ficha.getLugarFormacion()}</td>
                 <td>${ficha.getEstadoFicha()}</td>
                 <td>
-                  <button type="submit" class="btn btn-secondary" style="margin-left: 40%;" href="ficha?accion=Editar&id=${ficha.getIdFicha()}">Editar <i class="fa-solid fa-square-pen"></i> </button>
+                  <a href="ficha?accion=Editar&id=${ficha.getIdFicha()}" class="btn btn-secondary" >Editar<i class="fa-solid fa-square-pen" style="margin-left: 2%;"></i></a>
                 </td>
-                <td><button href="aprendiz?accion=listarAF" type="submit" class="btn btn-success" style="margin-left: 20%;">Aprendices <i class="fa-solid fa-graduation-cap"></i> </button></td>
+               
+                <td> <a href="aprendiz?accion=listarAF&idF=${ficha.getIdFicha()}" class="btn btn-success"  >Aprendices<i class="fa-solid fa-graduation-cap" style="margin-left: 2%;"></i></a></td>
               </tr>
-
+              
             </c:forEach> 
     
             </tbody>

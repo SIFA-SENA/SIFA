@@ -104,7 +104,8 @@ public class Ficha extends HttpServlet {
         try {
             fd.registrarFicha(fv);
             System.out.println("Registro insertado correctamente");
-            req.getRequestDispatcher("views/listarFichas.jsp").forward(req, resp);
+            resp.sendRedirect("ficha?accion=listar");
+         
         } catch (Exception e) {
             System.out.println("Error en la inserción del registro "+e.getMessage().toString());
         }

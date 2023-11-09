@@ -65,10 +65,10 @@
     
                 <select class="form-select form-select-lg mb-3 " aria-label="Large select example" name="tipodocUsuario" id="tipodocUsuario">
                   <option selected>Tipo de documento</option>
-                  <option value="1">Tarjeta de identidad</option>
-                  <option value="2">Cedula de ciudadania</option>
-                  <option value="3">Cedula de extranjeria</option>
-                  <option value="3">Pasaporte</option>
+                  <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                  <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+                  <option value="Cedula de extranjeria">Cedula de extranjeria</option>
+                  <option value="Pasaporte">Pasaporte</option>
                 </select>
 
                 <p></p>
