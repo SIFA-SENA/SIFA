@@ -1,0 +1,297 @@
+/*HEADER SENA*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+}
+
+.header1{
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+    padding: 50px;
+    
+}
+.header1 .logo{
+    cursor: pointer;
+}
+.header1 .logo .img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+.header1 .logo img:hover{
+    transform: scale(1.2);
+
+}
+
+.header1 .h1{
+    list-style: none;
+    display: inline-block;
+    padding: 0 30px;
+    font-size: 60px;
+    text-decoration: none;
+}
+
+/*HEADER NAVEGACION*/
+.navegation{
+    background-color:#39A900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+    padding: 50px;
+    margin: auto;
+    margin-left:5px;
+    margin-inline: revert ;
+    text-align: left;
+}
+
+.options h4{
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    margin-top: -25px;
+}
+
+.navegation div{
+    margin:auto;
+    margin-left: 10px;
+}
+
+
+.navegation a{
+    color: white;
+    text-decoration-color: white;
+    padding-left: 15px;
+}
+
+
+/*TITLE*/
+.title{
+    list-style: none;
+    margin: 40px;
+    text-decoration: none;
+    font-size: 60px;
+    text-align: center;
+}
+h3{
+    list-style: none;
+    margin: 40px;
+    text-decoration: none;
+    font-size: 60px;
+    text-align: center;
+}
+
+/*CARDS DISEÑO*/
+
+.card img{
+    width: 100%;
+    display: block;
+}
+h1 {
+    color: var(--secondary);
+    text-align: center;
+    text-transform: uppercase;
+}
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card-header{
+    height: 200px;
+    width: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
+    border: 1px solid #000000;
+}
+.card-title{
+    text-align: center;
+    margin: 0;
+}
+.card-description{
+    padding: 30px;
+    flex-grow: 1;
+}
+.card-header img{
+    border-radius: 10px 10px 0 0;
+}
+.card-body{
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    padding: 20px 15px;
+    text-align: justify;
+    border: 1px solid #000000;
+}
+.card a{
+    padding: 30px;
+    color: black;
+    text-align: center;
+}
+@media(min-width: 480px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:  10px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+    }
+    .card-body{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*REGISTRO Ficha*/
+.registrarFicha{
+    background-color: #39A900;
+    padding: 50px;
+    border: 3px solid #39A900;
+    border-radius: 10%;
+    margin: 100px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.registrarFicha .program{
+    margin-top: 20px;
+    
+}
+.registrarFicha .area{
+    margin-top: 20px;
+    
+}
+.registrarFicha .sede{
+    margin-top: 20px;
+    
+}
+.registrarFicha .Estado{
+    margin-top: 20px;
+    
+}
+
+.registrarFicha input{
+    margin-top: 20px;
+    border-radius: 15%;
+}
+
+
+/*FOOTER*/
+.container{
+	max-width: 1170px;
+	margin:auto;
+   
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: white;
+    border: 3px solid #39A900;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: black;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #39A900;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: black;
+	text-decoration: none;
+	font-weight: 300;
+	color: black;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: black;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: black;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: rgb(0, 0, 0);
+	background-color: black;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+.boton{
+	display: block;
+	width: 160px;
+	font-family: cursive;
+	font-weight: 700;
+	background-color: #39A900;
+	border-radius: 3px;
+	padding: 15px 30px;
+	margin: 50px 165px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+.boton:hover{
+	background-color:#F38D76;
+}
+
+
+
