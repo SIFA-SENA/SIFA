@@ -1,6 +1,7 @@
 create database gestion_fichas;
 use gestion_fichas;
 
+
 create table Usuario(
 idUsuario int primary key auto_increment,
 nombreUsuario varchar(50) not null,
@@ -37,5 +38,17 @@ idFichaFK int,
 FOREIGN KEY (idFichaFK) REFERENCES Ficha(idFicha)
 );
 
+create table Asistencia(
+idAsistencia int primary key auto_increment,
+asistencia varchar(10) not null,
+fecha date not null,
+competencia varchar(50) not null,
+idAprendizFK int,
+FOREIGN KEY (idAprendizFK) REFERENCES Aprendiz (idAprendiz)
+
+);
+
 select * from Usuario;
 select * from Aprendiz;
+
+ SELECT A.idAprendiz,A.nombreAprendiz,A.tipodocAprendiz,A.documentoAprendiz,A.celularAprendiz,A.correoAprendiz,A.fechaNacimientoAprendiz,A.estadoAprendiz,A.observaciones,F.idFicha, ASI.asistencia,ASI.fecha,ASI.competencia from Aprendiz A INNER JOIN Ficha F On F.idFicha=A.idFichaFK INNER JOIN Asistencia ASI  ;
