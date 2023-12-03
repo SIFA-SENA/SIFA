@@ -1,0 +1,13 @@
+model\AprendizDao.class
+model\FichaDao.class
+model\UsuarioDao.class
+controller\Ficha.class
+controller\Asistencia.class
+controller\Usuario.class
+model\AsistenciaVo.class
+model\UsuarioVo.class
+model\AprendizVo.class
+model\FichaVo.class
+controller\Aprendiz.class
+model\AsistenciaDao.class
+model\Conexion.class
